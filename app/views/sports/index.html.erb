@@ -1,2 +1,3 @@
-<h1>Sports#index</h1>
-<p>Find me in app/views/sports/index.html.erb</p>
+<% @sports.each do |sport| %>
+  <%= sport.name %>
+<% end %>
