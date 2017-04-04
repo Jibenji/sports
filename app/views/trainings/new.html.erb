@@ -1,0 +1,21 @@
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <%= simple_form_for(@training) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :date %>
+      <%= f.input :time %>
+      <%= f.input :duration %>
+      <%= f.input :price %>
+      <%= f.input :group_capacity %>
+      <%= f.input :level %>
+      <%= f.input :outdoor %>
+      <%= f.input :address %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
