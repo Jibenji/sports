@@ -1,0 +1,15 @@
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <%= simple_form_for(@request) do |f| %>
+      <%= f.input :certificates %>
+      <%= f.input :education %>
+      <%= f.input :description %>
+      <%= f.input :bio %>
+      <%= f.input :banner_picture, required: true %>
+      <%= f.input :banner_picture_cache, as: :hidden %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

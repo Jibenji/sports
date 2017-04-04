@@ -1,0 +1,4 @@
+<% @requests.each do |request| %>
+  <%= request.description %>
+  <%= link_to "evaluate the request", request_path(request) %>
+<% end %>
