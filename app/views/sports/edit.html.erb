@@ -1,0 +1,15 @@
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <%= simple_form_for(@sport) do |f| %>
+      <%= f.input :name, required: true %>
+      <%= f.input :tagline, required: true %>
+      <%= f.input :description, required: true %>
+      <%= f.input :banner_sport_picture, required: true %>
+      <%= f.input :banner_sport_picture_cache, as: :hidden %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
