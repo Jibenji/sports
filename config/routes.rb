@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:edit, :update]
 
   resources :trainers
+
   resources :trainings
 
   resources :requests
