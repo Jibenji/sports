@@ -1,2 +1,6 @@
-<h1>Trainings#index</h1>
-<p>Find me in app/views/trainings/index.html.erb</p>
+  <% @training.each do |training| %>
+  <%= training.title %>
+  <%= training.description %>
+  <% end %>
+
+
