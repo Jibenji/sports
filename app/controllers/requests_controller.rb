@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
   end
 
   def create
+
     @request = Request.new(request_params)
     @request.profile = current_user.profile
     if @request.valid?
@@ -25,6 +26,7 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    @request.destroy
   end
 
   def edit
