@@ -14,11 +14,12 @@ Rails.application.routes.draw do
 
   resources :sports, only: [:index, :show]
 
-  resources :trainings do
+  resources :trainings do #proffffffffiiiiiiiiiiiiillllllllllllessssssssssssssssssssssssssss
     resources :bookings do
       resources :reviews, only: [:new, :create, :update, :destroy, :edit]
     end
   end
+
 
   resources :requests
 
