@@ -7,7 +7,6 @@ class RequestsController < ApplicationController
   end
 
   def create
-
     @request = Request.new(request_params)
     @request.profile = current_user.profile
     if @request.valid?
@@ -33,6 +32,13 @@ class RequestsController < ApplicationController
   end
 
   def update
+    @request.update_attributes(request_params)
+    if @request.valid?
+      @request.save
+      redirect_to requests_path
+    else
+      render :edit
+    end
   end
 
   private
