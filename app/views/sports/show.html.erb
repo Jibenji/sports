@@ -1,2 +1,17 @@
-<h1>Sports#show</h1>
-<p>Find me in app/views/sports/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+
+
+
+      <%= @sport.name %>
+      <%= @sport.description %>
+      <%= @sport.tagline %>
+
+      <%= link_to "Delete", sport_path(@sport), method: :delete %>
+
+
+
+    </div>
+  </div>
+</div>
