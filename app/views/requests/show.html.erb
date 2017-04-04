@@ -1,0 +1,4 @@
+<%= @request.description %>
+<%= @request.bio %>
+
+<%= link_to "Accept this trainer", trainers_path(request: @request), method: :post %>

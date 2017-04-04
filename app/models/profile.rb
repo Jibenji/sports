@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_one :request
   has_one :trainer
   has_many :trainings, dependent: :destroy
   has_many :bookings, dependent: :destroy

@@ -5,12 +5,15 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations"}
 
   resources :profiles, only: [:edit, :update]
+
   resources :trainers, except: [:new, :create]
 
   resources :sports, only: [:index, :show]
-  resources :trainings, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :trainings
 
+  resources :requests
 
+  resources :sports, only: [:index, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -39,10 +39,12 @@
     <% else %>
     <%= link_to t(".top_call_to_action", default: "Become a trainer?"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
 
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
 
-    <%= link_to t(".top_call_to_action", default: "Sign Up"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
 
+    <%= link_to 'Login',  "#", data: { toggle: "modal", target: "#myLoginModal" },class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+
+    <%= link_to 'Sign up',  "#", data: { toggle: "modal", target: "#mySignUpModal" },class: "navbar-wagon-item navbar-wagon-button btn" %>
 
     <% end %>
 
