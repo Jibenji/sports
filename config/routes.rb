@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:edit, :update]
 
-  resources :trainers, except: [:new, :create]
+  resources :trainers
 
   resources :sports, only: [:index, :show]
   resources :trainings

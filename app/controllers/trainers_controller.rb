@@ -9,9 +9,14 @@ class TrainersController < ApplicationController
 
   def create
     @request = Request.find(params[:request])
-    @trainer = Trainer.new(bio: @request.bio)
-    @trainer.save
-    redirect_to trainers_path
+    @trainer = Trainer.new(@request.attributes.except("id", "created_at", "updated_at", "profile_id"))
+
+    if @trainer.save
+      @request.destroy
+      redirect_to trainers_path
+    else
+      redirect_to requests_path
+    end
   end
 
   def show
