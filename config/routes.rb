@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   resources :profiles, only: [:edit, :update]
 
   resources :trainers
-
-  resources :sports, only: [:index, :show]
   resources :trainings
 
   resources :requests
