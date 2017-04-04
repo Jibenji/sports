@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'profiles/index'
 
-  get 'profiles/show'
-
-  get 'profiles/edit'
-
-  get 'profiles/update'
-
-  get 'profiles/destroy'
-
-  devise_for :users, controllers: { registrations: "registrations"}
   root to: 'pages#home'
-
+  
+  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations"}
+  
   resources :profiles, only: [:edit, :update]
+  resources :trainers, except: [:new, :create]
+  
+  resources :sports, only: [:index, :show]
+  resources :trainings, only: [:index, :show]
+  
+  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

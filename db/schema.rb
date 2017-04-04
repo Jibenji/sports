@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404085321) do
+ActiveRecord::Schema.define(version: 20170404113346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170404085321) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
-    t.boolean  "admin",        default: false
+    t.boolean  "admin",          default: false
     t.integer  "phone_number"
     t.string   "address"
     t.string   "city"
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(version: 20170404085321) do
     t.date     "birth_date"
     t.integer  "user_id"
     t.integer  "trainer_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "avatar_picture"
     t.index ["trainer_id"], name: "index_profiles_on_trainer_id", using: :btree
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
@@ -60,8 +61,9 @@ ActiveRecord::Schema.define(version: 20170404085321) do
     t.string   "description"
     t.string   "bio"
     t.integer  "profile_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "banner_picture"
     t.index ["profile_id"], name: "index_requests_on_profile_id", using: :btree
   end
 
@@ -80,8 +82,9 @@ ActiveRecord::Schema.define(version: 20170404085321) do
     t.string   "name"
     t.string   "tagline"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "banner_sport_picture"
   end
 
   create_table "trainers", force: :cascade do |t|
@@ -89,8 +92,9 @@ ActiveRecord::Schema.define(version: 20170404085321) do
     t.string   "education"
     t.string   "description"
     t.string   "bio"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "banner_picture"
   end
 
   create_table "trainings", force: :cascade do |t|
