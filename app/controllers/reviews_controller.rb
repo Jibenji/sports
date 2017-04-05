@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :load_review, only: [ :edit, :update, :destroy]
-  before_action :load_booking, only: [:new, :update]
+  before_action :load_booking, only: [:new, :create, :update]
 
 
   def new
@@ -8,6 +8,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @review = Review.new(review_params)
+    @review.profile = current_user.profile
+    @review.booking = @booking
+    if @review.save
+      redirect_to profile_path(current_user.profile)
+    else
+      render :new
+    end
   end
 
   def destroy

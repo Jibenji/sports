@@ -1,10 +1,11 @@
-<p>Hi, do you want to confirm this booking?</p>
+<p>Hi, do you want to review this training?</p>
 
 <div class="form-container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <%= simple_form_for [@training, @booking] do |f| %>
-      <%= f.input :participants %>
+      <%= simple_form_for [@booking, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
       <%= f.submit %>
       <% end %>
     </div>

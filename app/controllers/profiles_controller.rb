@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @bookings = current_user.profile.bookings
   end
 
   def edit

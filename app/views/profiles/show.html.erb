@@ -1,2 +1,10 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<% @bookings.each do |booking|  %>
+  <p>review the following booking:</p>
+
+  <%= booking.training.title %>
+  <%= booking.training.date %>
+  <%= booking.training.duration %>
+
+  <%= link_to "review this booking" ,new_booking_review_path(booking) %>
+
+<% end %>

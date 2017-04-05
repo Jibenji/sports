@@ -1,21 +1,19 @@
 Rails.application.routes.draw do
 
-
-
-  get 'reviews/index'
-
   root to: 'pages#home'
 
   devise_for :users, controllers: { registrations: "registrations"}
 
-  resources :profiles, only: [:edit, :update]
+  resources :profiles, only: [:edit, :update, :show]
 
   resources :trainers
 
-  resources :trainings do #proffffffffiiiiiiiiiiiiillllllllllllessssssssssssssssssssssssssss
-    resources :bookings do
-      resources :reviews, only: [:new, :create, :update, :destroy, :edit]
-    end
+  resources :trainings do
+    resources :bookings, only: [:new, :create]
+  end
+
+  resources :bookings do
+    resources :reviews, only: [:new, :create, :update, :destroy, :edit]
   end
 
 
