@@ -1,16 +1,14 @@
 class ProfilesController < ApplicationController
-  before_action :load_profile, only: [:show]
-  before_action :load_current_user_profile, only: [:edit, :update, :destroy]
+  before_action :load_profile, only: [:show, :edit, :update, :destroy]
 
   def index
   end
 
   def show
-    @bookings = current_user.profile.bookings
   end
 
   def edit
-    @profile
+    @trainings = current_profile.trainings
   end
 
   def update
@@ -33,10 +31,6 @@ class ProfilesController < ApplicationController
   end
 
   def load_profile
-    @profile = Profile.find(params[:id])
-  end
-
-  def load_current_user_profile
-    @profile = current_user.profile
+    @profile = current_profile
   end
 end

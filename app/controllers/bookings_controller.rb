@@ -3,6 +3,10 @@ class BookingsController < ApplicationController
   before_action :load_training, only: [:create, :new]
 
 
+  def index
+    @bookings = current_profile.bookings
+  end
+
   def show
   end
 
@@ -12,10 +16,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.profile = current_user.profile
+    @booking.profile = current_profile
     @booking.training = @training
     if @booking.save
-      redirect_to profile_path(current_user.profile)
+      redirect_to profile_path(current_profile)
     else
       render :new
     end
