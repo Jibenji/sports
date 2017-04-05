@@ -12,3 +12,4 @@ class Training < ApplicationRecord
     self.group_capacity - total
   end
 end
+
