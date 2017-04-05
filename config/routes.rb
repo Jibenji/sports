@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :show]
   end
 
+  get 'trainings/all', to:"pages#trainings"
+
   get 'profile', to: "profiles#edit", as: :edit_profile
 
   resources :trainings do

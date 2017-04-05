@@ -1,9 +1,14 @@
 <%= render "shared/profile-tabs" %>
 
-<% @trainings.each do |training| %>
-  <%= training.title %>
-  <%= training.description %>
-  <%= link_to "details", training_path(training) %>
+<% if @trainings.empty? %>
+  <p>You have no trainings yet!</p>
+  <%= link_to "Become a trainer", new_request_path %>
+<% else %>
+  <% @trainings.each do |training| %>
+    <%= training.title %>
+    <%= training.description %>
+    <%= link_to "details", training_path(training) %>
+  <% end %>
 <% end %>
 
 
