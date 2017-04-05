@@ -2,8 +2,7 @@ ActiveAdmin.register Sport do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-# permit_params :list, :of, :attributes, :on, :model
-#
+permit_params :name, :description, :tagline, :banner_sport_picture, :banner_sport_picture_cache
 # or
 #
 # permit_params do
