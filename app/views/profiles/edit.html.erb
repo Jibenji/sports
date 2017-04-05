@@ -1,14 +1,24 @@
+<%= render "shared/profile-tabs" %>
 <div class="form-container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <h3 class="title-padding">Edit your profile</h3>
       <%= simple_form_for @profile, method: :patch do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
-        <%= f.input :first_name, required: true, autofocus: true %>
-        <%= f.input :last_name %>
+        <%= f.input :first_name, autofocus: true, label: false %>
+        <%= f.input :last_name, autofocus: true, label: false %>
+        <%= f.input :username, autofocus: true, label: false %>
+        <%= f.input :photo_avatar, label: "Profile picture" %>
+        <%= f.input :photo_avatar_cache, as: :hidden %>
+        <%= f.input :address, autofocus: true, placeholder: "Street 11", label: false %>
+        <%= f.input :zip_code, autofocus: true, placeholder: "1111 ZZ", label: false %>
+        <%= f.input :city, autofocus: true,  placeholder: "Amsterdam", label: false %>
+        <%= f.input :country, autofocus: true, priority: [ "Netherlands" ], label: false %>
+        <%= f.input :birth_date, autofocus: true, label: false %>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Save your Profile", class: "btn black-button" %>
+      <div class="form-actions button-padding">
+        <%= f.button :submit, "Save your Profile", class: "black-button" %>
       </div>
       <% end %>
     </div>
