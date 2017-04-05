@@ -9,6 +9,8 @@ class TrainingsController < ApplicationController
   end
 
   def new
+    @sports = Sport.all
+
     @training = Training.new
   end
 
@@ -44,7 +46,7 @@ class TrainingsController < ApplicationController
 
   private
    def training_params
-    params.require(:training).permit(:title, :date, :time, :duration, :price, :group_capacity, :level, :description, :outdoor, :longitude, :lattitude, :country, :city, :address, :zip_code)
+    params.require(:training).permit(:sport_id, :title, :date, :time, :duration, :price, :group_capacity, :level, :description, :outdoor, :longitude, :lattitude, :country, :city, :address, :zip_code)
   end
 
   def load_training
