@@ -1,2 +1,9 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<%= render "shared/profile-tabs" %>
+
+
+<% @bookings.each do |booking|  %>
+  <%= booking.training.title %>
+  <%= booking.training.date %>
+  <%= booking.training.duration %>
+  <%= link_to "review this booking" ,new_booking_review_path(booking) %>
+<% end %>

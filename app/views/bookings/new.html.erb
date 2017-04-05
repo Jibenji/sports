@@ -1,2 +1,11 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<p>Hi, do you want to confirm this booking?</p>
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <%= simple_form_for [@training, @booking] do |f| %>
+      <%= f.input :participants, collection: 1..@training.available_spots %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

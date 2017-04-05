@@ -23,7 +23,10 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
     end
-
     return user
+  end
+  
+  def name
+    self.email
   end
 end

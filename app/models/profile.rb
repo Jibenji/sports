@@ -1,4 +1,5 @@
 class Profile < ApplicationRecord
+  mount_uploader :avatar_picture, PhotoUploader
   belongs_to :user
   has_one :request
   has_one :trainer
