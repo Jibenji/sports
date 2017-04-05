@@ -12,8 +12,6 @@ Rails.application.routes.draw do
 
   resources :trainers
 
-  resources :sports, only: [:index, :show]
-
   resources :trainings do #proffffffffiiiiiiiiiiiiillllllllllllessssssssssssssssssssssssssss
     resources :bookings do
       resources :reviews, only: [:new, :create, :update, :destroy, :edit]
