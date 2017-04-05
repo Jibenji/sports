@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.profile = current_profile
     @booking.training = @training
     if @booking.save
-      redirect_to profile_path(current_profile)
+      redirect_to edit_profile_path
     else
       render :new
     end

@@ -1,5 +1,4 @@
 <% @trainings.each do |training| %>
-  <%= link_to training_path(training), do %>
+  <%= link_to "details", training_path(training) %>
   <%= training.title %>
-  <% end %>
 <% end %>

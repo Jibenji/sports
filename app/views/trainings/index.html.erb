@@ -1,9 +1,12 @@
 <%= render "shared/profile-tabs" %>
 
-<% if @trainings.empty? %>
-  <p>You have no trainings yet!</p>
+<% if current_profile.trainer.nil? && current_profile.request.nil? %>
+  <p>You are not a trainer yet!</p>
   <%= link_to "Become a trainer", new_request_path %>
+<% elsif !current_profile.request.nil? %>
+  <p>Your request to become a trainer is being reviewed</p>
 <% else %>
+  <%= link_to "Create a new training!", new_training_path %>
   <% @trainings.each do |training| %>
     <%= training.title %>
     <%= training.description %>
