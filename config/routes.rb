@@ -2,11 +2,14 @@ Rails.application.routes.draw do
 
 
 
+
   get 'reviews/index'
 
   root to: 'pages#home'
 
-  devise_for :users, controllers: { registrations: "registrations"}
+devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
 
   resources :profiles, only: [:edit, :update]
 
