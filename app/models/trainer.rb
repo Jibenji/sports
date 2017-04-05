@@ -1,3 +1,3 @@
 class Trainer < ApplicationRecord
-  belongs_to :profile, optional: true
+  has_one :profile
 end

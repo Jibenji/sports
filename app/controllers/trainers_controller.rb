@@ -1,4 +1,5 @@
 class TrainersController < ApplicationController
+
   def index
     @trainers = Trainer.all
   end
@@ -10,8 +11,9 @@ class TrainersController < ApplicationController
   def create
     @request = Request.find(params[:request])
     @trainer = Trainer.new(@request.attributes.except("id", "created_at", "updated_at", "profile_id"))
-
     if @trainer.save
+      current_profile.trainer = @trainer
+      current_profile.save
       @request.destroy
       redirect_to trainers_path
     else
