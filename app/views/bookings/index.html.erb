@@ -1,9 +1,16 @@
 <%= render "shared/profile-tabs" %>
 
-
-<% @bookings.each do |booking|  %>
-  <%= booking.training.title %>
-  <%= booking.training.date %>
-  <%= booking.training.duration %>
-  <%= link_to "review this booking" ,new_booking_review_path(booking) %>
+<% if @bookings.empty? %>
+  <p>You haven't tried a training yet!</p>
+  <%= link_to "Find a training", trainings_all_path %>
+<% else %>
+  <% @bookings.each do |booking|  %>
+    <%= booking.training.title %>
+    <%= booking.training.date %>
+    <%= booking.training.duration %>
+    <%= link_to "review this booking" ,new_booking_review_path(booking) %>
+  <% end %>
 <% end %>
+
+
+
