@@ -1,7 +1,7 @@
   <% @training.each do |training| %>
-  <%= training.title %>
-  <%= training.description %>
-  <%= link_to "Book this training", new_training_booking_path(training) %>
+    <%= training.title %>
+    <%= training.description %>
+    <%= link_to "details", training_path(training) %>
   <% end %>
 
 
