@@ -26,6 +26,8 @@ gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'autoprefixer-rails'
 gem "letter_opener", group: :development
 
@@ -43,6 +45,7 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pg_search'
 end
 
 
