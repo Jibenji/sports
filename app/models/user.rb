@@ -16,16 +16,28 @@ class User < ApplicationRecord
 
     user = User.where(provider: auth.provider, uid: auth.uid).first
     user ||= User.where(email: auth.info.email).first # User did a regular sign up in the past.
+
+    attributes = {
+                    first_name: auth.info.first_name,
+                    last_name: auth.info.last_name
+                  }
+
     if user
       user.update(user_params)
+      user.profile.update({remote_avatar_picture_url: auth.info.image})
     else
       user = User.new(user_params)
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
+      profile = Profile.new(attributes)
+      profile.user = user
+      profile.remote_avatar_picture_url = auth.info.image
+      profile.save
     end
+
     return user
   end
-  
+
   def name
     self.email
   end
