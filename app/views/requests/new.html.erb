@@ -1,14 +1,15 @@
 <div class="form-container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <h2 id="trainer-title">Become a trainer!</h2>
       <%= simple_form_for(@request) do |f| %>
-      <%= f.input :description %>
-      <%= f.input :bio %>
-      <%= f.input :certificates %>
-      <%= f.input :education %>
+      <%= f.input :description, autofocus: true, placeholder: "Tagline", label: false %>
+      <%= f.input :bio, autofocus: true, placeholder: "Can you tell us a bit more about yourself?", label: false %>
+      <%= f.input :certificates, autofocus: true, placeholder: "Do you have any certificates?", label: false %>
+      <%= f.input :education, autofocus: true, placeholder: "Education", label: false %>
       <%= f.input :banner_picture %>
       <%= f.input :banner_picture_cache, as: :hidden %>
-      <%= f.submit %>
+      <%= f.button :submit, "Submit", class: "black-button submit-button" %>
       <% end %>
     </div>
   </div>
