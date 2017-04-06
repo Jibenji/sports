@@ -1,42 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Soplex</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-  </head>
-  <body>
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '453225988402267',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/sign-up' %>
-     <%= render 'shared/login' %>
+<head>
+  <title>TODO</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+</head>
+<body>
 
-    <%= yield %>
+ <%= render 'shared/navbar' %>
+ <%= render 'shared/flashes' %>
+ <%= render 'shared/sign-up' %>
+ <%= render 'shared/login' %>
 
-     <%= render 'layouts/footer' %>
+ <%= yield %>
 
-    <%= javascript_include_tag 'application' %>
-  </body>
+ <%= render 'layouts/footer' %>
+
+ <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+ <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+<%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+
+ <%= javascript_include_tag 'application' %>
+ <%= yield(:after_js) %>
+
+
+   <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '453225988402267',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+</body>
 </html>
