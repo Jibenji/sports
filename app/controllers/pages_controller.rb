@@ -6,6 +6,10 @@ class PagesController < ApplicationController
   end
 
   def trainings
-    @trainings = Training.all
+    @trainings = Training.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@trainings) do |training, marker|
+      marker.lat training.latitude
+      marker.lng training.longitude
+    end
   end
 end
