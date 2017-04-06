@@ -1,16 +1,19 @@
 // Your footer style
 .footer {
   color: #edeff0;
-  height: 35vh;
+  height: 25vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  margin: 50px 200px 0 200px;
+  margin-top: 10vh;
+  border-top: 1px solid black;
 }
 
 .social-button {
   list-style: none;
+  padding: 0;
 }
 
 .social-button li{
@@ -27,15 +30,6 @@
   color: #c9c9c9;
 }
 
-.social-buttons {
-  padding-left: 100px;
-}
-
-
-.footer-text {
-  padding-right: 100px;
-  list-style: none;
-}
 
 .footer-text li {
   display: inline;
