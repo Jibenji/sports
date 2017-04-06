@@ -1,33 +1,38 @@
 .black-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 4px;
+  border-radius: 1px;
   line-height: 40px;
   background-color: #white;
   color: black;
   font-size: 14px;
   border: 1px solid black;
+&:hover {
   text-decoration: none;
-}
-
-
-.black-button:hover {
   color: #8d8d8d;
   background: white;
   border-color: #8d8d8d;
 }
+}
+
+
 
 .fb-button {
   padding: 15px 100px;
-}
-
-.fb-button a {
-  color: black;
-  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 19px;
+  a {
+    color: black;
+    &:hover {
+    text-decoration: none;
+    }
+  }
 }
 
 .button-margin {
-   margin: 50px 10px;
+ margin: 50px 10px;
 }
 
 .submit-button {

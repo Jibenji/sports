@@ -20,6 +20,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem "letter_opener", group: :development
+
 
 
 gem 'activeadmin', github: 'activeadmin/activeadmin'
