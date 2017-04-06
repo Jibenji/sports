@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'pages#home'
-
+  get '/results', to: 'pages#results'
+  post '/results', to: 'pages#results'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                    registrations: 'registrations'}

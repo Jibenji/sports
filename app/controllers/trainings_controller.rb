@@ -10,7 +10,6 @@ class TrainingsController < ApplicationController
 
   def new
     @sports = Sport.all
-
     @training = Training.new
   end
 

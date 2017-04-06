@@ -3,6 +3,9 @@
 //= require bootstrap-sprockets
 //= require ./cable
 //= require underscore
+//= require moment
+//= require bootstrap-datetimepicker
+//= require pickers
 //= require gmaps/google
 
 
@@ -14,3 +17,6 @@ $(document).ready(function(){
   $('#mySignUpModal').modal('show');
   }
 })
+
+
+

@@ -16,4 +16,9 @@ class PagesController < ApplicationController
       marker.lng training.longitude
     end
   end
+
+  def results
+    @sport = Sport.find_by_name(params[:search_query][:sport])
+    @trainings = Training.where({ sport_id: @sport, date: params[:search_query][:date] })
+  end
 end
