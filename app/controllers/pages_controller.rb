@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-
+    @sports = Sport.all.pluck(:name)
   end
 
   def trainings
@@ -11,5 +11,10 @@ class PagesController < ApplicationController
       marker.lat training.latitude
       marker.lng training.longitude
     end
+  end
+
+  def results
+    @sport = Sport.find_by_name(params[:search_query][:sport])
+    @trainings = Training.where({ sport_id: @sport, date: params[:search_query][:date] })
   end
 end
