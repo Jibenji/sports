@@ -2,6 +2,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require ./cable
+//= require underscore
+//= require gmaps/google
+
 
 $(".alert" ).slideUp(3000);
 $(".notice" ).slideUp(1000);
