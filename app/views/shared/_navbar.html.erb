@@ -64,9 +64,12 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Some mobile link</a></li>
-          <li><a href="#">Other one</a></li>
-          <li><a href="#">Other one</a></li>
+          <% if user_signed_in? %>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li> <%= link_to 'Sign up',  "#", data: { toggle: "modal", target: "#mySignUpModal" } %> </li>
+        <li> <%= link_to 'Login',  "#", data: { toggle: "modal", target: "#myLoginModal" } %> </li>
+        <% end %>
         </ul>
       </div>
     </div>
