@@ -3,5 +3,5 @@
 //= require bootstrap-sprockets
 //= require ./cable
 
-$(".alert" ).hide(2000);
-$(".notice" ).fadeOut(1000);
+$(".alert" ).slideUp(1000);
+$(".notice" ).slideUp(1000);
