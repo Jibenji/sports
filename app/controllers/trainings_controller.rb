@@ -17,7 +17,6 @@ class TrainingsController < ApplicationController
   def create
     @training = Training.new(training_params)
     @training.profile = current_user.profile
-    @training.sport = Sport.find(1)
     if @training.save
       redirect_to trainings_path
     else
@@ -31,7 +30,6 @@ class TrainingsController < ApplicationController
   def update
     @training = Training.new(training_params)
     @training.profile = current_user.profile
-    @training.sport = Sport.find(1)
     if @training.save
       redirect_to trainings_path
     else

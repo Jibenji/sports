@@ -1,2 +1,6 @@
 <%= render 'layouts/banner' %>
 
+<% @sports.each do |sport| %>
+  <%= sport.name %>
+  <%= sport.tagline %>
+<% end %>

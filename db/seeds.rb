@@ -34,6 +34,11 @@ url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxh
 running.remote_banner_sport_picture_url = url
 running.save!
 
+dancing = Sport.create(name: "Dancing", tagline: "Dance baby!", description: "Dance with Jennifer")
+url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
+dancing.remote_banner_sport_picture_url = url
+dancing.save!
+
 # #training
 yoga_training = Training.create(latitude: 52.362886, longitude: 4.915362, profile: profile, sport: yoga, title: "Yoga Training"         , price: 10, city: "Amsterdam", group_capacity: 5, level: "difficult", outdoor: true, description: "Outdoor training in vondelpark with Jennifer", date: Date.new, time: Time.now, address: "Sarphatistraat 105, Amsterdam", duration: 60)
 tennis_training = Training.create(latitude: 52.359838, longitude: 4.863829, profile: profile, sport: tennis, title: "Tennis Training"   , price: 35, city: "Amsterdam", group_capacity: 6, level: "difficult", outdoor: true, description: "Outdoor training in vondelpark with Jennifer", date: Date.new, time: Time.now, address: "Sarphatistraat 5, Amsterdam", duration: 60)
