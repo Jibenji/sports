@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :trainings, :results ]
+  before_action :load_sports, only: [:home, :results]
 
   def home
-    @sports = Sport.all
     @trainings = []
     @sports.each do |sport|
       @trainings << sport.trainings.sample
@@ -18,7 +18,22 @@ class PagesController < ApplicationController
   end
 
   def results
-    @sport = Sport.find_by_name(params[:search_query][:sport])
-    @trainings = Training.where({ sport_id: @sport, date: params[:search_query][:date] })
+    @sport = Sport.find(params[:search_query][:sport])
+    @search = {
+      sport_id: @sport,
+      date: params[:search_query][:date],
+    }
+
+    @search[:level] = params[:search_query][:level] if params[:search_query][:level].present?
+    @search[:time] = params[:search_query][:time] if params[:search_query][:time].present?
+
+    @trainings = Training.where(@search)
   end
+
+  private
+
+  def load_sports
+    @sports = Sport.all
+  end
+
 end
