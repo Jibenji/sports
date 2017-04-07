@@ -1,6 +1,15 @@
 <%= render 'layouts/banner' %>
 
 
+<div class="icons-banner">
+<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+<p> Choose your sport </p>
+<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+<p> Book your training whenever wherever </p>
+<i class="fa fa-credit-card" aria-hidden="true"></i>
+<p> Pay easily online</p>
+</div>
+
 <div class="tabs">
   <% @sports.keys.each do |sport| %>
     <a class="tab active" data-target="#<%= sport.name %>">
@@ -19,5 +28,3 @@
     <% end %>
   <% end %>
 </div>
-
-
