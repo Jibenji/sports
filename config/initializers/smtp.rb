@@ -7,3 +7,5 @@ ActionMailer::Base.smtp_settings = {
   authentication: :cram_md5,
   enable_starttls_auto: true
 }
+
+#
