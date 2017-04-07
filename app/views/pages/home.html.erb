@@ -1,30 +1,37 @@
 <%= render 'layouts/banner' %>
 
+<section class="container card-group">
+  <div class="row">
+    <div class="col-sm-4">
+     <div class="icons-banner">
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+      <p> Choose your sport </p>
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+      <p> Book your training whenever wherever </p>
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      <p> Pay easily online</p>
+     </div>
+   </div>
+  </div>
+</section>
 
-<div class="icons-banner">
-<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-<p> Choose your sport </p>
-<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-<p> Book your training whenever wherever </p>
-<i class="fa fa-credit-card" aria-hidden="true"></i>
-<p> Pay easily online</p>
-</div>
+
 
 <div class="tabs">
   <% @sports.keys.each do |sport| %>
-    <a class="tab active" data-target="#<%= sport.name %>">
-        <%= sport.name %>
-    </a>
+  <a class="tab active" data-target="#<%= sport.name %>">
+    <%= sport.name %>
+  </a>
   <% end %>
 </div>
-
 
 <div class="container text-center">
   <% @sports.values.each do |array_training| %>
-    <% array_training.each do |training|  %>
-      <div class="tab-content" id="<%= training.sport.name %>">
-        <p><%= training.title %></p>
-      </div>
-    <% end %>
+  <% array_training.each do |training|  %>
+  <div class="tab-content" id="<%= training.sport.name %>">
+    <p><%= training.title %></p>
+  </div>
+  <% end %>
   <% end %>
 </div>
+
