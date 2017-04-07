@@ -14,7 +14,6 @@ class Training < ApplicationRecord
   validates :price, presence: true
   validates :group_capacity, presence: true
   validates :level, presence: true
-  validates :outdoor, presence: true
   validates :address, presence: true
 
   def available_spots
