@@ -7,7 +7,6 @@ attributes = {
   bio: "My Bio",
   education: "My education",
   description: "My description",
-  banner_picture: "test"
 }
 profile.trainer = Trainer.new(attributes)
 profile.save!
