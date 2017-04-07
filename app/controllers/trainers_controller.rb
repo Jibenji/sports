@@ -22,14 +22,27 @@ class TrainersController < ApplicationController
   end
 
   def show
+    @trainer = current_profile.trainer
   end
 
   def edit
+    @trainer = current_profile.trainer
+
   end
 
   def update
+    @trainer = current_profile.trainer
+    @trainer.update_attributes(trainer_params)
+    @trainer.save
+    redirect_to trainer_path(current_profile)
   end
 
-  def delete
+  def destroy
+  end
+
+  private
+
+  def trainer_params
+    params.require(:trainer).permit(:description, :bio, :certificates, :education, :banner_picture, :banner_picture_cache )
   end
 end

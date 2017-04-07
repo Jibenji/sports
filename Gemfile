@@ -15,6 +15,7 @@ gem 'country_select'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem "active_link_to"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

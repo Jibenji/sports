@@ -1,2 +1,27 @@
-<h1>Trainers#edit</h1>
-<p>Find me in app/views/trainers/edit.html.erb</p>
+<%= render "shared/profile-tabs" %>
+
+<% if current_profile.trainer.nil? && current_profile.request.nil? %>
+<p>You are not a trainer yet!</p>
+<%= link_to "Become a trainer", new_request_path %>
+<% elsif !current_profile.request.nil? %>
+<p>Your request to become a trainer is being reviewed</p>
+<% else %>
+<h2 class="text-center title-padding-top">Update your trainer profile</h2>
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <%= simple_form_for @trainer, method: :patch do |f| %>
+      <%= f.input :description, autofocus: true, placeholder: "Your tagline", label: false  %>
+      <%= f.input :bio, autofocus: true, placeholder: "Some info about you", label: false  %>
+      <%= f.input :certificates, autofocus: true, placeholder: "Your certificates", label: false  %>
+      <%= f.input :education, autofocus: true, placeholder: "Your education", label: false  %>
+      <%= f.input :banner_picture%>
+      <%= f.input :banner_picture_cache, as: :hidden %>
+      <div class="form-actions button-padding">
+        <%= f.button :submit, "Save your Profile", class: "black-button" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
