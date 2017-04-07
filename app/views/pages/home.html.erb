@@ -1,10 +1,23 @@
 <%= render 'layouts/banner' %>
 
-<div class="home-container">
-<% @sports.each do |sport| %>
-  <%= sport.name %>
-  <%= sport.tagline %>
-<% end %>
 
-
+<div class="tabs">
+  <% @sports.keys.each do |sport| %>
+    <a class="tab active" data-target="#<%= sport.name %>">
+        <%= sport.name %>
+    </a>
+  <% end %>
 </div>
+
+
+<div class="container text-center">
+  <% @sports.values.each do |array_training| %>
+    <% array_training.each do |training|  %>
+      <div class="tab-content" id="<%= training.sport.name %>">
+        <p><%= training.title %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+

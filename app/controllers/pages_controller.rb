@@ -3,10 +3,7 @@ class PagesController < ApplicationController
   before_action :load_sports, only: [:home, :results]
 
   def home
-    @trainings = []
-    @sports.each do |sport|
-      @trainings << sport.trainings.sample
-    end
+    @sports = Training.all.group_by(&:sport)
   end
 
   def trainings
