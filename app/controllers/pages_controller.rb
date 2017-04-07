@@ -2,11 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :trainings, :results ]
 
   def home
-    @sports = Sport.all
-    @trainings = []
-    @sports.each do |sport|
-      @trainings << sport.trainings.sample
-    end
+    @sports = Training.all.group_by(&:sport)
   end
 
   def trainings
