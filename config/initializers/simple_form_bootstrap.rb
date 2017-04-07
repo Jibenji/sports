@@ -151,4 +151,5 @@ SimpleForm.setup do |config|
     date: :multi_select,
     time: :multi_select
   }
+
 end

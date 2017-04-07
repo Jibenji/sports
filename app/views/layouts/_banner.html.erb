@@ -8,16 +8,21 @@
       Train Whenever, Wherever
     </h3>
 
-    <div class="search-field-banner">
-      <%= simple_form_for :search_query, url: results_path do |f| %>
-      <div class="form-inputs">
-        <%= f.input :sport, autofocus: true, collection: @sports %>
-        <%= f.input :date, as: :date_picker %>
+    <div class="container">
+      <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <div class="form-inline search-field-banner ">
+            <%= simple_form_for :search_query, url: results_path do |f| %>
+            <div class="form-inputs">
+              <%= f.input :sport, autofocus: true, collection: @sports, prompt: "Pick a sport", label: false %>
+              <%= f.input :date, as: :date_picker, placeholder: "Pick a date", label: false %>
+              <%= f.button :submit, "Search", class: "black-button form-inline" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div class="form-actions button-padding">
-        <%= f.button :submit, "Search", class: "black-button" %>
-      </div>
-      <% end %>
     </div>
   </div>
 </div>
+
