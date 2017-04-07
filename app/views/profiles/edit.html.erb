@@ -6,14 +6,14 @@
       <%= simple_form_for @profile, method: :patch do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
-        <%= f.input :first_name, autofocus: true, label: false %>
-        <%= f.input :last_name, autofocus: true, label: false %>
-        <%= f.input :username, autofocus: true, label: false %>
+        <%= f.input :first_name, autofocus: true, placeholder: "Your first name", label: false  %>
+        <%= f.input :last_name, autofocus: true, placeholder: "Your last name", label: false %>
+        <%= f.input :username, autofocus: true, placeholder: "Your username", label: false %>
         <%= f.input :avatar_picture, label: "Profile picture" %>
         <%= f.input :avatar_picture_cache, as: :hidden %>
-        <%= f.input :address, autofocus: true, placeholder: "Street 11", label: false %>
-        <%= f.input :zip_code, autofocus: true, placeholder: "1111 ZZ", label: false %>
-        <%= f.input :city, autofocus: true,  placeholder: "Amsterdam", label: false %>
+        <%= f.input :address, autofocus: true, placeholder: "Your address", label: false %>
+        <%= f.input :zip_code, autofocus: true, placeholder: "Your zipcode", label: false %>
+        <%= f.input :city, autofocus: true,  placeholder: "Your city", label: false %>
         <%= f.input :country, autofocus: true, priority: [ "Netherlands" ], label: false %>
         <%= f.input :birth_date, autofocus: true, label: false %>
       </div>

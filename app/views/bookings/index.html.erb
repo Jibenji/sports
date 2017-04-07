@@ -1,16 +1,29 @@
 <%= render "shared/profile-tabs" %>
 
 <% if @bookings.empty? %>
-  <p>You haven't tried a training yet!</p>
-  <%= link_to "Find a training", trainings_all_path %>
+<p id="padding-no-training">You haven't tried a training yet!</p>
+<%= link_to "Find a training", trainings_all_path, class: "navbar-wagon-button btn" %>
 <% else %>
-  <% @bookings.each do |booking|  %>
-    <%= booking.training.title %>
-    <%= booking.training.date %>
-    <%= booking.training.duration %>
-    <%= link_to "review this booking" ,new_booking_review_path(booking) %>
-  <% end %>
+<section class="container card-group">
+  <div class="row">
+   <% @bookings.each do |booking| %>
+   <div class="col-sm-4">
+    <div class="card">
+      <div class="card-block">
+        <%= link_to booking_path(booking) do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @trainer.banner_picture, height: 300, width: 400,crop: :fill %>')">
+          <div class="name-card text-center">
+            <%= booking.training.title %>
+            <%= booking.training.date %>
+            <%= booking.training.duration %>
+            <%= link_to "review this booking" ,new_booking_review_path(booking) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
-
-
-
+  <% end %>
+  <% end %>
+</div>
+</section>
