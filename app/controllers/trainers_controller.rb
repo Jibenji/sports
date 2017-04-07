@@ -23,6 +23,7 @@ class TrainersController < ApplicationController
 
   def show
     @trainer = current_profile.trainer
+    @profile = current_profile
   end
 
   def edit
