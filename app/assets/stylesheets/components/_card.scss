@@ -67,9 +67,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
 }
 
 .name-card a:hover {
   text-decoration: none;
+}
+
+.container-icons {
+  height: 250px;
+  width: 100%;
+}
+
+.sport {
+  text-align: center;
+  height: 250px;
+  width: 350px;
+  border: 1px solid black;
 }
