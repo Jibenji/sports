@@ -1,7 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
-    super do
-      Profile.create(user: resource)
+    super do |user|
+      user.create_profile
+      user.send_welcome_email
     end
   end
 
