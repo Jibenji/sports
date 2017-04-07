@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_profile.bookings
+    @trainer = current_profile.trainer
   end
 
   def show

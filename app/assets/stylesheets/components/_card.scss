@@ -1,0 +1,75 @@
+.card {
+  height: 250px;
+  width: 350px;
+  border-radius: 3px;
+  color: black;
+  position: relative;
+  margin-bottom: 40px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+}
+.card a:hover, .card a:focus {
+    color: white;
+    text-decoration: none;
+}
+.card-description {
+ text-align: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100%;
+}
+
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description a {
+  font-size: 13px;
+  color: black;
+}
+
+.card-title {
+  margin-bottom: 10px;
+
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+
+.card-padding {
+  padding-bottom: 30px;
+}
+
+.card-group {
+  margin-top: 50px ;
+  margin-bottom: 100px;
+  padding-top: 50px;
+}
+
+.name-card {
+  height: 250px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.name-card a:hover {
+  text-decoration: none;
+}
