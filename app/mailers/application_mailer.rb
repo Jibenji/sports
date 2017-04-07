@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'soplex.sport@gmail.com'
+  default from: 'contact@heroku.com'
   layout 'mailer'
 end
 
