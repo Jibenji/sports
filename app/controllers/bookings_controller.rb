@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :load_booking, only: [:show, :edit, :update, :destroy]
-  before_action :load_training, only: [:create, :new, :check_available_space_before_booking]
+  before_action :load_session, only: [:create, :new, :check_available_space_before_booking]
 
   def index
     @bookings = current_profile.bookings
@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
   end
 
-  def load_training
+  def load_session
     @training = Training.find(params[:training_id])
   end
 

@@ -1,11 +1,14 @@
 class TrainingsController < ApplicationController
-  before_action :load_training, only: [:show, :edit, :update, :destroy]
+  before_action :load_training, only: [:show, :edit, :update, :destroy, :load_sessions]
+  before_action :load_sessions, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @trainings = current_profile.trainings
   end
 
   def show
+
   end
 
   def new
@@ -48,6 +51,10 @@ class TrainingsController < ApplicationController
 
   def load_training
     @training = Training.find(params[:id])
+  end
+
+  def load_sessions
+    @sessions = @training.sessions
   end
 
 end

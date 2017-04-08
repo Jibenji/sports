@@ -4,7 +4,7 @@ class Training < ApplicationRecord
 
   belongs_to :sport
   belongs_to :profile
-  has_many :bookings
+  has_many :sessions, dependent: :destroy
   validates :sport, presence: true
   validates :title, presence: true
   validates :description, presence: true
@@ -16,11 +16,4 @@ class Training < ApplicationRecord
   validates :level, presence: true
   validates :address, presence: true
 
-  def available_spots
-    total = 0
-    self.bookings.each do |booking|
-      total += booking.participants
-    end
-    self.group_capacity - total
-  end
 end

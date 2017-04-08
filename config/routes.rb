@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   get 'profile', to: "profiles#edit", as: :edit_profile
 
   resources :trainings do
+    resources :sessions, only: [:new, :create, :index]
+  end
+
+  resources :sessions, only: [:index] do
     resources :bookings, only: [:new, :create]
   end
 
