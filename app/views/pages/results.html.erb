@@ -1,22 +1,43 @@
-<div class="search-field-banner">
-  <%= simple_form_for :search_query, url: results_path do |f| %>
-  <div class="form-inputs">
+<div class = "search-container">
+  <div class="form-inline earch-field-banner">
+    <%= simple_form_for :search_query, url: results_path do |f| %>
     <%= f.input :sport, autofocus: true, collection: @sports %>
     <%= f.input :date, as: :date_picker %>
     <%= f.input :time, as: :time_picker %>
     <%= f.input :level, collection: ["beginner", "medium", "difficult"] %>
-  </div>
-  <div class="form-actions button-padding">
     <%= f.button :submit, "Refine your search", class: "black-button" %>
   </div>
-  <% end %>
+</div>
+</div>
+<% end %>
 </div>
 
-<div class="container">
-  <div class="row">
+<div class="results-container">
+  <div class="trainings">
     <% @trainings.each do |training| %>
-      <%= training.title %>
-      <%= training.description %>
+    <%= training.title %>
+    <%= training.description %>
     <% end %>
   </div>
+  <div class="map" id="map" style="width: 35%; height: 100vh;">
+    <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+    $(document).ready(function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    if (markers.length == 0) {
+    handler.getMap().setZoom(2);
+    } else if (markers.length == 1) {
+    handler.getMap().setZoom(14);
+  }
+  });
+    });
+    <% end %>
+  <% end %>
+  </div>
 </div>
+
+

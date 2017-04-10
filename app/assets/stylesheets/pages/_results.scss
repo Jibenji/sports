@@ -1,0 +1,21 @@
+.results-container {
+ min-height: 400px;
+ padding: 0 100px;
+ padding-top: 50px;
+ padding-bottom: 100px;
+ display: flex;
+}
+
+.trainings {
+ width: 60%;
+ height: 500px;
+ text-align: center;
+ margin-top: 30px;
+}
+
+.map {
+ display: right;
+ width: 40%;
+ height: 500px;
+
+}
