@@ -8,12 +8,9 @@ class Training < ApplicationRecord
   validates :sport, presence: true
   validates :title, presence: true
   validates :description, presence: true
-  validates :date, presence: true
-  validates :time, presence: true
   validates :duration, presence: true
   validates :price, presence: true
   validates :group_capacity, presence: true
   validates :level, presence: true
   validates :address, presence: true
-
 end

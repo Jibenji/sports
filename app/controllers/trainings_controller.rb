@@ -8,7 +8,6 @@ class TrainingsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -17,10 +16,13 @@ class TrainingsController < ApplicationController
   end
 
   def create
+
     @training = Training.new(training_params)
     @training.profile = current_user.profile
+    # session[:training] = @training
     if @training.save
-      redirect_to trainings_path
+      redirect_to new_training_session_path(@training)
+      flash[:notice] = "Please finish your training registration by adding sessions"
     else
       render :new
     end

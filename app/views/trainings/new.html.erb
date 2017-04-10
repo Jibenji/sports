@@ -13,9 +13,6 @@
       <%= f.input :level, collection: ["Beginner", "Medium", "Difficult"], prompt: "What is the difficulty level?", label: false %>
       <%= f.input :outdoor %>
       <%= f.input :address, placeholder: "What is the address of training?", label: false %>
-      <%= f.input :date, as: :date_picker, placeholder: "Pick a date", label: false %>
-      <%= f.input :time, placeholder: "What is the start time?", label: false %>
-
       <%= f.button :submit, "Set training sessions for this training", class: "black-button submit-button" %>
       <% end %>
     </div>

@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_profile.bookings
-    @trainer = current_profile.trainer
   end
 
   def show
@@ -17,7 +16,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.profile = current_profile
-    @booking.training = @training
+    @booking.session = @session
     if @booking.save
       redirect_to edit_profile_path
     else
@@ -35,7 +34,7 @@ class BookingsController < ApplicationController
   end
 
   def load_session
-    @training = Training.find(params[:training_id])
+    @session = Session.find(params[:session_id])
   end
 
   def booking_params
