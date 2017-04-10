@@ -1,10 +1,9 @@
 class BookingsController < ApplicationController
   before_action :load_booking, only: [:show, :edit, :update, :destroy]
-  before_action :load_training, only: [:create, :new, :check_available_space_before_booking]
+  before_action :load_session, only: [:create, :new, :check_available_space_before_booking]
 
   def index
     @bookings = current_profile.bookings
-    @trainer = current_profile.trainer
   end
 
   def show
@@ -17,7 +16,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.profile = current_profile
-    @booking.training = @training
+    @booking.session = @session
     if @booking.save
       redirect_to edit_profile_path
     else
@@ -34,8 +33,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
   end
 
-  def load_training
-    @training = Training.find(params[:training_id])
+  def load_session
+    @session = Session.find(params[:session_id])
   end
 
   def booking_params

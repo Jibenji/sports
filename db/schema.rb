@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406090849) do
+ActiveRecord::Schema.define(version: 20170410101124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 20170406090849) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "participants"
-    t.integer  "training_id"
     t.integer  "profile_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "session_id"
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
-    t.index ["training_id"], name: "index_bookings_on_training_id", using: :btree
+    t.index ["session_id"], name: "index_bookings_on_session_id", using: :btree
   end
 
   create_table "messages", force: :cascade do |t|
@@ -89,6 +89,17 @@ ActiveRecord::Schema.define(version: 20170406090849) do
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_reviews_on_booking_id", using: :btree
     t.index ["profile_id"], name: "index_reviews_on_profile_id", using: :btree
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.date     "date"
+    t.time     "time"
+    t.integer  "duration"
+    t.integer  "training_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "group_capacity"
+    t.index ["training_id"], name: "index_sessions_on_training_id", using: :btree
   end
 
   create_table "sports", force: :cascade do |t|
@@ -160,7 +171,6 @@ ActiveRecord::Schema.define(version: 20170406090849) do
   end
 
   add_foreign_key "bookings", "profiles"
-  add_foreign_key "bookings", "trainings"
   add_foreign_key "messages", "profiles", column: "receiver_id"
   add_foreign_key "messages", "profiles", column: "sender_id"
   add_foreign_key "profiles", "trainers"
@@ -168,6 +178,7 @@ ActiveRecord::Schema.define(version: 20170406090849) do
   add_foreign_key "requests", "profiles"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "profiles"
+  add_foreign_key "sessions", "trainings"
   add_foreign_key "trainings", "profiles"
   add_foreign_key "trainings", "sports"
 end
