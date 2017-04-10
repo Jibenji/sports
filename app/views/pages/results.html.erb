@@ -1,16 +1,14 @@
 <div class = "search-container">
-  <div class="form-inline earch-field-banner">
-    <%= simple_form_for :search_query, url: results_path do |f| %>
-    <%= f.input :sport, autofocus: true, collection: @sports %>
-    <%= f.input :date, as: :date_picker %>
-    <%= f.input :time, as: :time_picker %>
-    <%= f.input :level, collection: ["Beginner", "Medium", "Difficult"] %>
+  <div class="form-inline search-field-banner">
+    <div class="form">
+      <%= simple_form_for :search_query, url: results_path do |f| %>
+      <%= f.input :sport, autofocus: true, collection: @sports, prompt: "Sport", label: false, class: "black-button", style: "border-radius: 0% !important;" %>
+      <%= f.input :level, prompt: "Level", label: false, collection: ["Beginner", "Medium", "Difficult"] %>
+      <%= f.input :date, as: :date_picker, placeholder: "Date", label: false %>
+      <%= f.input :time, as: :time_picker, placeholder: "Time", label: false  %>
+      <%= f.button :submit, "Search", class: "black-white-button" %>
+    </div>
   </div>
-  <div class="form-actions button-padding">
-    <%= f.button :submit, "Refine your search", class: "black-button" %>
-  </div>
-</div>
-</div>
 <% end %>
 </div>
 
@@ -21,7 +19,7 @@
     <%= training.description %>
     <% end %>
   </div>
-  <div class="map" id="map" style="width: 35%; height: 100vh;">
+  <div class="map" id="map" style="width: 50%; height: 100vh;">
     <% content_for(:after_js) do %>
     <%= javascript_tag do %>
     $(document).ready(function() {
@@ -32,14 +30,14 @@
     handler.fitMapToBounds();
     if (markers.length == 0) {
     handler.getMap().setZoom(2);
-    } else if (markers.length == 1) {
-    handler.getMap().setZoom(14);
-  }
-  });
-    });
-    <% end %>
-  <% end %>
-  </div>
+  } else if (markers.length == 1) {
+  handler.getMap().setZoom(14);
+}
+});
+});
+<% end %>
+<% end %>
+</div>
 </div>
 
 

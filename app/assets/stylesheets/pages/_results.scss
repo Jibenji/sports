@@ -1,9 +1,15 @@
+.search-container {
+  border-bottom: 1px solid lightgrey;
+}
+
+.form {
+  position: relative;
+  left: 50px;
+}
+
 .results-container {
- min-height: 400px;
- padding: 0 100px;
- padding-top: 50px;
- padding-bottom: 100px;
  display: flex;
+ justify-content: space-between;
 }
 
 .trainings {
@@ -15,7 +21,13 @@
 
 .map {
  display: right;
- width: 40%;
+ width: 50%;
  height: 500px;
 
+}
+
+.black-white-button {
+  background-color: black;
+  color: white;
+  font-size: 14px;
 }
