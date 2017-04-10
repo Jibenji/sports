@@ -1,6 +1,4 @@
-
-
-
+<div class="hidden-xs">
 <div class="banner-container">
   <div class="banner-content">
     <div class="banner-title">
@@ -25,6 +23,30 @@
 <div class="banner-photo" style="background-image: url(<%= image_url 'woman-running-park-sunset1.jpg'%>);">
 </div>
 </div>
+</div>
 
+<div class="hidden-sm hidden-md hidden-lg">
+<div class="banner-photo-xs" style="background-image: url(<%= image_url 'woman-running-park-sunset1.jpg'%>);">
+</div>
+<div class="banner-content">
+    <div class="banner-title">
+      <h1>
+       Soplex
+     </h1>
+     <h3>
+       Train Whenever, Wherever
+     </h3>
+   </div>
+   <div class="form-inline search-field-banner ">
+    <%= simple_form_for :search_query, url: results_path do |f| %>
+    <div class="form-inputs">
+      <%= f.input :sport, autofocus: true, collection: @sports, prompt: "Pick a sport  ▼", label: false, class: "black-button" %>
+      <%= f.input :date, as: :date_picker, placeholder: "Pick a date", label: false %>
+      <%= f.button :submit, "Search", class: "navbar-wagon-button form-inline" %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
+</div>
 
