@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
-    <div class="name-card">
+      <div class="name-card">
        <div <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
         <p> Book your training whenever wherever </p>
       </div>
@@ -26,25 +26,38 @@
 </div>
 </div>
 
-<div class="tabs">
-  <% @trainings.keys.each do |sport| %>
 
-    <a class="tab active" data-target="#<%= sport.name %>">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <% @sports.each do |sport| %>
+    <div class="col-xs-12 col-sm-2">
+      <a class="tab active" data-target=".<%= sport.name %>-tab" style="display: block;">
         <%= sport.name %>
-    </a>
-
-  <% end %>
-</div>
-
-<div class="container text-center">
-  <% @trainings.values.each do |array_training| %>
-
-  <% array_training.each do |training|  %>
-  <div class="tab-content" id="<%= training.sport.name %>">
-    <p><%= training.title %></p>
+      </a>
+      </div>
+    <% end %>
   </div>
-  <% end %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <% @sports.each_with_index do |sport, i| %>
+          <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
+            <% sport.trainings.cheap.each do |training|  %>
+            <p><%= training.title %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <div class="col-xs-12 col-sm-6">
+            <% @sports.each_with_index do |sport, i|  %>
+      <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>" >
+              <p><%= sport.name %></p>
+      </div>
+            <% end %>
+    </div>
+  </div>
 </div>
+
+
 
 

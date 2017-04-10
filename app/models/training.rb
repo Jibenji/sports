@@ -1,6 +1,7 @@
 class Training < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  scope :cheap, -> { where("price < ?", 15).limit(2) }
 
   belongs_to :sport
   belongs_to :profile

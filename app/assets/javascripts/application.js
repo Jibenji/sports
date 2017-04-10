@@ -17,7 +17,6 @@ $(document).ready(function(){
   $('#mySignUpModal').modal('show');
   }
      $(function(){
-        $(".tab-content").addClass('hidden');
         $(".tab").on("click", function(e){
           // Change active tab
           var content = $(this).data("target");
