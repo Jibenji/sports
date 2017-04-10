@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :training
+  belongs_to :session
   belongs_to :profile
 end

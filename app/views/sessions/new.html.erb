@@ -1,0 +1,21 @@
+<h1>Here are your sessions for now</h1>
+<% @sessions.each do |session| %>
+  <%= session.date %>
+  <%= session.time %>
+<% end %>
+
+
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h2 id="training-title">Add a sessions</h2>
+      <p>Please enter the details for this training</p>
+      <%= simple_form_for [@training, @session] do |f| %>
+      <%= f.input :date, as: :date_picker, placeholder: "Pick a date", label: false %>
+      <%= f.input :time, placeholder: "What is the start time?", label: false %>
+      <%= f.button :submit, "Set training sessions for this training", class: "black-button submit-button" %>
+      <% end %>
+      <%= link_to "Save your training", trainings_path %>
+    </div>
+  </div>
+</div>
