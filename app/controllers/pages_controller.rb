@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_action :load_sports, only: [:home, :results]
 
   def home
-    @trainings = Training.all.group_by(&:sport)
+    @sports = Sport.first(5)
   end
 
   def trainings
