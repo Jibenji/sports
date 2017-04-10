@@ -7,18 +7,20 @@
   padding: 0 100px;
   padding-top: 50px;
   padding-bottom: 100px;
-}
-
-.profile-basic-info {
   display: flex;
-  justify-content: space-between;
 }
 
-.profile-avatar {
-  margin: 50px 150px 0 0;
+.profile-photo {
+  width: 50%;
+  height: 500px;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-top: 30px;
 }
 
-.trainer-bio {
-  width: 600px;
-  padding: 50px 0;
+.profile-text {
+   width: 50%;
+  height: 500px;
+  padding-right: 10%;
+
 }

@@ -1,25 +1,12 @@
-<div class="banner-profile" style="background-image: url(<%= image_url cl_image_path @trainer.banner_picture%>);">
-</div>
-
 <div class="profile-container">
-  <div class="profile-basic-info">
-    <div class="trainer-info">
-      <div class="trainer-name-description">
-        <div id="trainer-name">
-          <h1><%= @profile.first_name + " " + @profile.last_name %></h1>
-        </div>
-        <h4><%= @trainer.description %></h4>
-      </div>
+  <div class="profile-text">
+    <div id="trainer-name">
+      <h1><%= @profile.first_name + " " + @profile.last_name %></h1>
     </div>
-    <div class="profile-avatar">
-      <img class="avatar-large" src="<%= cl_image_path @profile.avatar_picture, crop: :fill %>">
-    </div>
-  </div>
-  <div class="trainer-bio">
+    <h4><%= @trainer.description %></h4>
     <%= @trainer.bio %>
   </div>
-
-
-
+  <div class="profile-photo" style="background-image: url(<%= image_url cl_image_path @trainer.banner_picture%>);">
+  </div>
 </div>
 
