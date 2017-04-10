@@ -2,19 +2,18 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
     <h2 id="training-title">Add a training</h2>
+      <p>Please enter the details for this training</p>
       <%= simple_form_for(@training) do |f| %>
       <%= f.input :sport_id, collection: @sports, prompt: "Pick a sport", label: false %>
       <%= f.input :title, autofocus: true, placeholder: "Enter a title", label: false %>
       <%= f.input :description, placeholder: "Enter a description", label: false %>
-      <%= f.input :date, as: :date_picker, placeholder: "Pick a date", label: false %>
-      <%= f.input :time, placeholder: "What is the start time?", label: false %>
       <%= f.input :duration, placeholder: "How long is your training?", label: false %>
       <%= f.input :price, placeholder: "What is the price?", label: false %>
       <%= f.input :group_capacity, placeholder: "How many people can join your training?", label: false %>
-      <%= f.input :level, placeholder: "What is the difficulty level?", label: false %>
+      <%= f.input :level, collection: ["Beginner", "Medium", "Difficult"], prompt: "What is the difficulty level?", label: false %>
       <%= f.input :outdoor %>
       <%= f.input :address, placeholder: "What is the address of training?", label: false %>
-      <%= f.button :submit, "Add your training", class: "black-button submit-button" %>
+      <%= f.button :submit, "Set training sessions for this training", class: "black-button submit-button" %>
       <% end %>
     </div>
   </div>

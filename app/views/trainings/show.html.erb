@@ -1,4 +1,9 @@
 
-<p>Those are the training's details for now</p>
+<p>Those are the training's sessions for now</p>
 
-<%= link_to "Book this training", new_training_booking_path(@training) %>
+<% @sessions.each do |session| %>
+  <%= session.date %>
+  <%= session.time %>
+  <%= link_to "Book this session", new_session_booking_path(session.id) %>
+<% end %>
+

@@ -2,8 +2,8 @@
 <div class="form-container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <%= simple_form_for [@training, @booking] do |f| %>
-      <%= f.input :participants, collection: 1..@training.available_spots %>
+      <%= simple_form_for [@session, @booking] do |f| %>
+      <%= f.input :participants, collection: 1..@session.available_spots %>
       <%= f.submit %>
       <% end %>
     </div>

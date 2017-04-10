@@ -1,5 +1,7 @@
 class TrainingsController < ApplicationController
-  before_action :load_training, only: [:show, :edit, :update, :destroy]
+  before_action :load_training, only: [:show, :edit, :update, :destroy, :load_sessions]
+  before_action :load_sessions, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @trainings = current_profile.trainings
@@ -14,10 +16,13 @@ class TrainingsController < ApplicationController
   end
 
   def create
+
     @training = Training.new(training_params)
     @training.profile = current_user.profile
+    # session[:training] = @training
     if @training.save
-      redirect_to trainings_path
+      redirect_to new_training_session_path(@training)
+      flash[:notice] = "Please finish your training registration by adding sessions"
     else
       render :new
     end
@@ -48,6 +53,10 @@ class TrainingsController < ApplicationController
 
   def load_training
     @training = Training.find(params[:id])
+  end
+
+  def load_sessions
+    @sessions = @training.sessions
   end
 
 end
