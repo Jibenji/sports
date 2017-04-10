@@ -1,15 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.5) 0%, rgba(0,36,61,0.5) 50%), url(<%= image_url 'background.jpg'%>);">
-  <div class="banner-content">
+<div class="banner">
 
-    <h1>
-      Soplex
-    </h1>
-    <h3>
+  <div class="home-video-container">
+    <%= video_tag '7734613.mp4', playsinline: true, autoplay: true, muted: true, loop: true, poster: 'Crocodile.jpg', id: 'bgvid' %>
+  </div>
+
+  <div class="home-title-container">
+    <div class="home-title">
+     Soplex
+    </div>
+    <div class="home-sub-title">
       Train Whenever, Wherever
-    </h3>
+    </div>
+  </div>
 
-    <div class="container">
-      <div class="row">
+
+
+
+
+  <div class="container">
+    <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
           <div class="form-inline search-field-banner ">
             <%= simple_form_for :search_query, url: results_path do |f| %>
@@ -23,6 +32,7 @@
         </div>
       </div>
     </div>
-  </div>
+
+
 </div>
 
