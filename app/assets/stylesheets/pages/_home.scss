@@ -5,7 +5,9 @@
 .story-container {
   text-align: center;
   padding: 100px 0;
-  background-color: #FCFCFC;
+  background-color: #FAFAFA;
+  border-top: solid #E6E8E6 1px;
+  border-bottom: solid #E6E8E6 1px;
 
   h3 span {
     font-size: 50px;
@@ -18,18 +20,41 @@
     font-weight: bold;
   }
 
-   h3 p {
+  h3 p {
     font-family: raleway;
     font-size: 18px;
     font-weight: lighter;
     padding-top: 10px;
-    
+
   }
+}
+
+.our-sports {
+  font-weight: bold;
+  font-size: 10px;
+  color: grey;
+}
+
+.tab-container {
+  margin-top: 50px;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .tab-pictures {
   width: 100%;
-  height: 200px !important;
+  height: auto;
+  border-radius: 1px;
+  // height: 200px !important;
 }
 
 .tab-image.active {

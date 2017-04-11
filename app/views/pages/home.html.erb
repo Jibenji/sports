@@ -2,14 +2,12 @@
 
 
 <section class="story-container">
-
   <div class="row">
-
     <div class="col-xs-12 col-md-4">
       <h3><span class="fa fa-heartbeat"></span><br>Your favorite sports<p>We offer different sports.<br>Pick a sport you like.</p></h3>
     </div>
     <div class="col-xs-12 col-md-4">
-      <h3><span class="fa fa-calendar-check-o"></span><br>Quality trainings<p>Choose between different<br>trainings in your neighbourhood.</p></h3>
+      <h3><span class="fa fa-check-square-o"></span><br>Quality trainings<p>Choose between different<br>trainings in your neighbourhood.</p></h3>
     </div>
     <div class="col-xs-12 col-md-4">
       <h3><span class="fa fa-credit-card"></span><br>Save and easy<p>Confirm your booking and<br>pay safely online.</p></h3>
@@ -17,16 +15,24 @@
   </div>
 </section>
 
-<div class="row">
-  <div class="col-sm-1"></div>
-  <% @sports.each do |sport| %>
-  <div class="tab tab-sport col-md-offset-1 col-md-2" data-target=".<%=sport.name %>-tab">
-    <%= image_tag "sports/#{sport.name.downcase}.jpeg", class: "tab-pictures"  %>
+
+<div class="tab-container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <% @sports.each do |sport| %>
+    <div class="tab tab-sport col-md-2 text-center" data-target=".<%=sport.name %>-tab">
+      <div class = "relative" >
+        <%= image_tag "sports/#{sport.name.downcase}.jpeg", class: "tab-pictures"  %>
+      </div>
+      <div class="tab-name">
+        <%= sport.name %>
+      </div>
+    </div>
+    <%end %>
   </div>
-  <%end %>
 </div>
 
-
+</div>
 
 <div class="row">
   <div class="col-xs-12 col-sm-6">
@@ -45,7 +51,6 @@
     </div>
     <% end %>
   </div>
-</div>
 </div>
 
 
