@@ -2,28 +2,38 @@
   min-height: 400px;
   padding: 0 100px;
   margin-top: -70px;
-  padding-bottom: 100px;
-  display: flex;
+  padding-bottom: 20px;
 }
 
+.profile-container-xs {
+
+}
+
+.profile-photo-xs {
+  height: 30vh;
+    background-repeat: no-repeat;
+  background-size: cover;
+}
 .profile-photo {
-  width: 50%;
   background-repeat: no-repeat;
-  text-align: center;
-  margin: 100px 0 0 100px;
-
-}
+  height: 500px;
+  margin-top: 70px;
+ }
 
 .profile-text {
-  width: 50%;
   padding: 30px 50px;
   margin: 0 70px 0 40px ;
   background-color: #FAF33E;
+  min-height: 500px;
+}
 
+.profile-text-xs{
+  background-color: #FAF33E;
+  padding: 25px;
+  width: 100%;
 }
 
 #trainer-name {
-
   padding: 10px 0;
   margin-bottom: 40px;
 
@@ -35,3 +45,12 @@
     border-radius: none;
   }
 }
+
+#list-trainings-on-profile{
+padding-left: 150px;
+}
+
+#trainings-title {
+  padding-bottom: 30px;
+}
+

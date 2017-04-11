@@ -11,6 +11,7 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
 }
 
 
@@ -47,7 +48,6 @@
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-
 }
 
 /* Navbar standard link */
@@ -63,7 +63,6 @@
 /* Navbar right button */
 .navbar-wagon-button {
   margin-left: 10px;
-  padding:  20px;
   border-radius: 1px;
   line-height: 40px;
   font-size: 14px;
@@ -81,6 +80,7 @@
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
+margin-left: 10px;
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
