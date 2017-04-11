@@ -1,5 +1,7 @@
 class Sport < ApplicationRecord
   has_many :trainings, dependent: :destroy
+  has_many :sessions, through: :trainings
+
   mount_uploader :banner_sport_picture, PhotoUploader
 
   validates :name, presence: true

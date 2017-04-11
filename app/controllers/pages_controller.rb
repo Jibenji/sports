@@ -3,34 +3,40 @@ class PagesController < ApplicationController
   before_action :load_sports, only: [:home, :results]
 
   def home
-    @sports = Sport.first(5)
+
   end
 
   def trainings
-    @trainings = Training.where.not(latitude: nil, longitude: nil)
-    @hash = Gmaps4rails.build_markers(@trainings) do |training, marker|
-      marker.lat training.latitude
-      marker.lng training.longitude
-    end
   end
 
   def results
-    @sport = Sport.find(params[:search_query][:sport])
-    @search = {
-      sport_id: @sport,
-      date: params[:search_query][:date],
-    }
 
-    @search[:level] = params[:search_query][:level] if params[:search_query][:level].present?
-    @search[:time] = params[:search_query][:time] if params[:search_query][:time].present?
-
-    @trainings = Training.where(@search)
-  end
+    @sessions = Session.where(date: params[:search_query][:date])
+    if params[:search_query][:sport] == "All Sports"
+      @sessions
+    else
+      @sessions = @sessions.select { |session| session.sport == Sport.find_by_name(params[:search_query][:sport]) }
+    end
+    @sessions = @sessions.group_by { |session| session.training_id }
+    #google maps pins
+    trainings = []
+    @sessions.each do |training, _sessions|
+      trainings << Training.find(training)
+    end
+    @hash = Gmaps4rails.build_markers(trainings) do |training, marker|
+      marker.lat training.latitude
+      marker.lng training.longitude
+    end
+ end
 
   private
 
   def load_sports
-    @sports = Sport.all
+    @sports = Sport.first(5)
+    @sports_selection = ["All Sports"]
+    @sports.each do |sport|
+      (@sports_selection << sport.name).flatten!
+    end
   end
 
 end
