@@ -1,8 +1,10 @@
+<%= render "shared/navbar" %>
+
 <div class = "search-container">
   <div class="form-inline search-field-banner">
     <div class="form">
       <%= simple_form_for :search_query, url: results_path do |f| %>
-      <%= f.input :sport, autofocus: true, collection: @sports, prompt: "Sport", label: false, class: "black-button", style: "border-radius: 0% !important;" %>
+      <%= f.input :sport, autofocus: true, collection: @sports_selection, prompt: "Sport", label: false, class: "black-button", style: "border-radius: 0% !important;" %>
       <%= f.input :level, prompt: "Level", label: false, collection: ["Beginner", "Medium", "Difficult"] %>
       <%= f.input :date, as: :date_picker, placeholder: "Date", label: false %>
       <%= f.input :time, as: :time_picker, placeholder: "Time", label: false  %>
@@ -14,27 +16,31 @@
 
 <div class="results-container">
   <div class="trainings">
-    <% @trainings.each do |training| %>
-    <%= training.title %>
-    <%= training.description %>
+    <% @sessions.each do |training_id, sessions| %>
+      <%= Training.find(training_id).title %>
+      <% sessions.each do |session| %>
+        <%= session.date %>
+        <%= session.time %>
+      <% end %>
     <% end %>
   </div>
   <div class="map" id="map" style="width: 50%; height: 100vh;">
     <% content_for(:after_js) do %>
     <%= javascript_tag do %>
     $(document).ready(function() {
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    if (markers.length == 0) {
-    handler.getMap().setZoom(2);
-  } else if (markers.length == 1) {
-  handler.getMap().setZoom(14);
-}
-});
-});
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+          }
+        else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
 <% end %>
 <% end %>
 </div>

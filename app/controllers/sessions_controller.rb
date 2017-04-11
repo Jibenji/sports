@@ -26,8 +26,9 @@ class SessionsController < ApplicationController
   end
 
   private
+
   def session_params
-    params.require(:session).permit(:date, :time, :duration)
+    params.require(:session).permit(:date, :time, :duration, :sport)
   end
 
   def load_training

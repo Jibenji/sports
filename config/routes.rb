@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/results', to: 'pages#results'
   post '/results', to: 'pages#results'
 
+  devise_scope :user do
+    match '/sessions/user', to: 'devise/sessions#create', via: :post
+  end
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                    registrations: 'registrations'}
