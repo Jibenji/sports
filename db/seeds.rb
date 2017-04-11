@@ -1,4 +1,5 @@
 user = User.last
+Sport.destroy_all
 
 #profiles
 profile = Profile.create(first_name: "Your Session", user: user)
@@ -13,15 +14,15 @@ profile.save!
 #requester = Profile.create(first_name: "I want to be a trainer", user: user)
 
 #sports
-yoga = Sport.new(name: "Yoga", tagline: "Boring sheet", description: "You need to be flexible man...")
+yoga = Sport.create(name: "Yoga", tagline: "Boring sheet", description: "You need to be flexible man...")
 url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
 yoga.remote_banner_sport_picture_url = url
 yoga.save!
 
-tennis = Sport.create(name: "Tennis", tagline: "Bounce the ball", description: "We love Maria")
+bootcamp = Sport.create(name: "Bootcamp", tagline: "Bounce the ball", description: "We love Maria")
 url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
-tennis.remote_banner_sport_picture_url = url
-tennis.save!
+bootcamp.remote_banner_sport_picture_url = url
+bootcamp.save!
 
 boxing = Sport.create(name: "Boxing", tagline: "Have a punch", description: "You really need to like bruises")
 url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"

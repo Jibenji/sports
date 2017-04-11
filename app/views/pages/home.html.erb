@@ -6,47 +6,46 @@
   <div class="row">
 
     <div class="col-xs-12 col-md-4">
-      <h3><span class="fa fa-heartbeat"></span><br>Choose your favorite sport</h3>
+      <h3><span class="fa fa-heartbeat"></span><br>Your favorite sports<p>We offer different sports.<br>Pick a sport you like.</p></h3>
     </div>
     <div class="col-xs-12 col-md-4">
-      <h3><span class="fa fa-calendar-check-o"></span><br>Pick a training</h3>
+      <h3><span class="fa fa-calendar-check-o"></span><br>Quality trainings<p>Choose between different<br>trainings in your neighbourhood.</p></h3>
     </div>
     <div class="col-xs-12 col-md-4">
-      <h3><span class="fa fa-credit-card"></span><br>Pay easily online</h3>
+      <h3><span class="fa fa-credit-card"></span><br>Save and easy<p>Confirm your booking and<br>pay safely online.</p></h3>
     </div>
   </div>
 </section>
 
+<div class="row">
+  <div class="col-sm-1"></div>
+  <% @sports.each do |sport| %>
+  <div class="tab tab-sport col-md-offset-1 col-md-2" data-target=".<%=sport.name %>-tab">
+    <%= image_tag "sports/#{sport.name.downcase}.jpeg", class: "tab-pictures"  %>
+  </div>
+  <%end %>
+</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <% @sports.each do |sport| %>
-    <div class="col-xs-12 col-sm-2">
-      <a class="tab" data-target=".<%= sport.name %>-tab" style="display: block;">
-        <%= sport.name %>
-      </a>
-      </div>
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <% @sports.each_with_index do |sport, i| %>
+    <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
+      <% sport.trainings.cheap.each do |training|  %>
+      <p><%= training.title %></p>
+      <% end %>
+    </div>
     <% end %>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <% @sports.each_with_index do |sport, i| %>
-          <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
-            <% sport.trainings.cheap.each do |training|  %>
-            <p><%= training.title %></p>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    <div class="col-xs-12 col-sm-6">
-            <% @sports.each_with_index do |sport, i|  %>
-      <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>" >
-              <p><%= sport.name %></p>
-      </div>
-            <% end %>
+  <div class="col-xs-12 col-sm-6">
+    <% @sports.each_with_index do |sport, i|  %>
+    <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>" >
+      <p><%= sport.name %></p>
     </div>
+    <% end %>
   </div>
+</div>
 </div>
 
 
