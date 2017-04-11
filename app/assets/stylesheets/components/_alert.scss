@@ -5,14 +5,14 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  color: black;
   position: absolute;
   left: 0;
   right: 0;
   border: none;
 }
 .alert-info {
-  background: $green;
+  background: #FAF33E;
 }
 .alert-warning {
   background: $red;

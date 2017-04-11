@@ -1,8 +1,20 @@
 <%= render "shared/profile-tabs" %>
 
 <% if @bookings.empty? %>
-<p id="padding-no-training">You haven't tried a training yet!</p>
-<%= link_to "Find a training", trainings_all_path, class: "navbar-wagon-button btn" %>
+
+<div class="booking-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="no-training text-center">
+      <p>You haven't tried a training yet!</p>
+      </div>
+      <div class= "text-center">
+      <%= link_to "Find a training", trainings_all_path, class: "navbar-wagon-button btn" %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <% else %>
 <section class="container card-group">
   <div class="row">
@@ -10,17 +22,17 @@
    <div class="col-sm-4">
     <div class="card">
       <div class="card-block">
-            <%= booking.session.training.title %>
-            <%= booking.session.training.date %>
-            <%= booking.session.training.duration %>
-            <%= link_to "review this booking" ,new_booking_review_path(booking) %>
-          </div>
-        </div>
+        <%= booking.session.training.title %>
+        <%= booking.session.training.date %>
+        <%= booking.session.training.duration %>
+        <%= link_to "review this booking" ,new_booking_review_path(booking) %>
       </div>
-      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>
 </section>
-  <% end %>
+<% end %>
 
 
