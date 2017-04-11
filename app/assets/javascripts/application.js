@@ -27,6 +27,9 @@ $(document).ready(function(){
           $(tabSelector).removeClass("hidden");
         });
       });
+  $('.datepicker').datetimepicker({
+  defaultDate: new Date()
+});
 })
 
 

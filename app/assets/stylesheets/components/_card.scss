@@ -6,11 +6,15 @@
   position: relative;
   margin-bottom: 40px;
 }
+
+.outer-card-results{
+  margin: 10px 0px;
+  text-align: center;
+}
 .card-user {
   position: absolute;
   right: 10px;
   top: 10px;
-
 }
 .card a:hover, .card a:focus {
     color: white;
@@ -34,7 +38,6 @@
 
 .card-title {
   margin-bottom: 10px;
-
 }
 
 .card-link {
