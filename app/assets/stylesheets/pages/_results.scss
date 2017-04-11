@@ -7,16 +7,9 @@
   left: 50px;
 }
 
-.results-container {
- display: flex;
- justify-content: space-between;
-}
-
-.trainings {
- width: 60%;
- height: 500px;
- text-align: center;
- margin-top: 30px;
+#form-filters {
+  position: relative;
+  left: 1em;
 }
 
 .black-white-button {
@@ -24,3 +17,35 @@
   color: white;
   font-size: 14px;
 }
+
+
+  .result-wrapper {
+    position: relative;
+  }
+
+  .container-results{
+    width:100%;
+    position: absolute;
+    overflow-y: scroll;
+
+   .container {
+    margin: 0px;
+   }
+  }
+  .container-map{
+   position: fixed;
+   width: 35%;
+   right: 0px;
+  }
+
+@media (min-width: 768px){
+ .container-results{
+   .container {
+    max-width:65%;
+  }
+ }
+}
+
+
+
+
