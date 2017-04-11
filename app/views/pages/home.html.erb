@@ -32,26 +32,29 @@
   </div>
 </div>
 
+<div class="overview-container">
+    <% @sports.each_with_index do |sport, i| %>
+      <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
+      <% sport.trainings.cheap.each do |training|  %>
+      <div class="card-training relative">
+        <div class="card-training-description">
+          <h3><%= training.title %></h3>
+          <p><%= training.description %></p>
+          <p><%= training.time %></p>
+          <p><%= training.duration %></p>
+        </div>
+        <div>
+          <%= link_to "Book", training_path(training), class: "buy-button" %>
+        </div>
+
+      </div>
+      <% end %>
+      </div>
+    <% end %>
 </div>
 
-<div class="row">
-  <div class="col-xs-12 col-sm-6">
-    <% @sports.each_with_index do |sport, i| %>
-    <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
-      <% sport.trainings.cheap.each do |training|  %>
-      <p><%= training.title %></p>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <div class="col-xs-12 col-sm-6">
-    <% @sports.each_with_index do |sport, i|  %>
-    <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>" >
-      <p><%= sport.name %></p>
-    </div>
-    <% end %>
-  </div>
-</div>
+
+
 
 
 
