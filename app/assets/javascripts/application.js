@@ -30,8 +30,7 @@ $(document).ready(function(){
           var tabSelector = $(this).data("target");
           $(tabSelector).removeClass("hidden");
         });
-  });
-
+      });
 })
 
 

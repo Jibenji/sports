@@ -10,7 +10,6 @@ class PagesController < ApplicationController
   end
 
   def results
-
     @sessions = Session.where(date: params[:search_query][:date])
     if params[:search_query][:sport] == "All Sports"
       @sessions
@@ -27,6 +26,7 @@ class PagesController < ApplicationController
       marker.lat training.latitude
       marker.lng training.longitude
     end
+    render :results
  end
 
   private

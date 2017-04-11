@@ -6,44 +6,70 @@
       <%= simple_form_for :search_query, url: results_path do |f| %>
       <%= f.input :sport, autofocus: true, collection: @sports_selection, prompt: "Sport", label: false, class: "black-button", style: "border-radius: 0% !important;" %>
       <%= f.input :level, prompt: "Level", label: false, collection: ["Beginner", "Medium", "Difficult"] %>
-      <%= f.input :date, as: :date_picker, placeholder: "Date", label: false %>
+      <%= f.input :date, as: :date_picker, class: "datepicker", label: false %>
       <%= f.input :time, as: :time_picker, placeholder: "Time", label: false  %>
       <%= f.button :submit, "Search", class: "black-white-button" %>
+      <% end %>
     </div>
   </div>
-<% end %>
+
 </div>
 
-<div class="results-container">
-  <div class="trainings">
-    <% @sessions.each do |training_id, sessions| %>
-      <%= Training.find(training_id).title %>
-      <% sessions.each do |session| %>
-        <%= session.date %>
-        <%= session.time %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <% @sessions.each do |training_id, sessions| %>
+        <div class="outer-card-results">
+        <div class="row">
+          <div class="col-xs-9">
+          <%= link_to training_path(training_id) do %>
+          <div class="card card-results" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path Training.find(training_id).profile.trainer.banner_picture, height: 300, width: 400,crop: :fill %>')">
+              <%= Training.find(training_id).title %>
+              <% sessions.each do |session| %>
+                <%= session.date %>
+                <%= session.time %>
+              <% end %>
+            </div>
+          <% end %>
+          </div>
+          <div class="col-xs-3">
+            <%= link_to trainer_path(2) do %>
+              <div class="card-results-thin">
+                <img class="avatar-results" src="<%= cl_image_path Training.find(training_id).profile.avatar_picture, crop: :fill %>">
+                <p><%= Training.find(training_id).profile.first_name %></p>
+                <p><%= Training.find(training_id).profile.last_name %></p>
+                </div>
+              <% end %>
+          </div>
+        </div>
+        </div>
       <% end %>
-    <% end %>
-  </div>
-  <div class="map" id="map" style="width: 50%; height: 100vh;">
-    <% content_for(:after_js) do %>
-    <%= javascript_tag do %>
-    $(document).ready(function() {
-      var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
+    </div>
+    <div class="col-xs-6">
+      <div class="map" id="map" style="height: 100vh;">
+        <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+        $(document).ready(function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
         if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-          }
-        else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
+        handler.getMap().setZoom(2);
         }
-      });
-    });
-<% end %>
-<% end %>
+        else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+            }
+          });
+        });
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+
 
 
