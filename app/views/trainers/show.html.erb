@@ -1,10 +1,10 @@
 <div class="profile-container">
   <div class="profile-text">
-    <div id="trainer-name">
+    <div id="trainer-name" class="text-center">
       <h1><%= @profile.first_name + " " + @profile.last_name %></h1>
     </div>
-    <h4><%= @trainer.description %></h4>
-    <%= @trainer.bio %>
+    <h4 id="trainer-tagline"><%= @trainer.description %></h4>
+    <p id="trainer-desription"><%= @trainer.bio %></p>
   </div>
   <div class="profile-photo" style="background-image: url(<%= image_url cl_image_path @trainer.banner_picture%>);">
   </div>
