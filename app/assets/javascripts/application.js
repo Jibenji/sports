@@ -14,11 +14,15 @@ $(".notice" ).slideUp(1000);
 
 $(document).ready(function(){
   if ($('#validation-sign-up').hasClass('validation-failed')) {
-  $('#mySignUpModal').modal('show');
+    $('#mySignUpModal').modal('show');
   }
-     $(function(){
-        $(".tab").on("click", function(e){
+  $(function(){
+    $(".tab").on("click", function(e){
           // Change active tab
+          $(".tab").removeClass("active");
+          $(this).addClass("active");
+
+
           var content = $(this).data("target");
           $(".tab-content").addClass("hidden");
           $(content).removeClass("hidden");
@@ -26,7 +30,8 @@ $(document).ready(function(){
           var tabSelector = $(this).data("target");
           $(tabSelector).removeClass("hidden");
         });
-      });
+  });
+
 })
 
 
