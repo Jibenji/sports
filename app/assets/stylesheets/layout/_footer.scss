@@ -1,14 +1,14 @@
 // Your footer style
 .footer {
+  width: 70%;
   color: #edeff0;
   height: 25vh;
-  background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px 200px 0 200px;
-  margin-top: 10vh;
+  margin-top: 15vh;
   border-top: 1px solid black;
+  margin: 0 auto;
 }
 
 .social-button {

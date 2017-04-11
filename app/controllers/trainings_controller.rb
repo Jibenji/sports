@@ -16,7 +16,6 @@ class TrainingsController < ApplicationController
   end
 
   def create
-
     @training = Training.new(training_params)
     @training.profile = current_user.profile
     # session[:training] = @training

@@ -1,5 +1,5 @@
 .banner-container {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   margin-top: -70px;
 }
@@ -28,8 +28,19 @@
   background-size: cover;
 }
 
-.search-field-banner{
+.banner-photo-xs{
+  height: 35vh;
+  width:100%;
+  background-size: cover;
+  background-position: center top;
+  margin-top: 50px;
+}
+
+#padding-large-search{
   padding-left: 8vh;
+}
+
+.search-field-banner{
   #search_query_sport, #search_query_date, .input-group-btn button  {
     height: 42px;
     box-shadow: none;
@@ -39,13 +50,59 @@
   #search_query_sport {
     margin-right: 3px;
     -webkit-appearance: none;
+    color: #999999;
   }
+}
+
+.xs-banner{
+  #search_query_sport  {
+    width: 240px;
+    text-align: center;
+  }
+  #search_query_date   {
+    width: 200px;
+  }
+  #input-group-btn {
+    width: 40px;
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  .form-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .datetimepicker {
+      width: 245px;
+    }
+  }
+
+}
+
+.xs-button-search {
+  width: 245px;
+  margin-left: 0;
 }
 
 .banner-title {
   padding-top: 20vh;
   padding-left: 8vh;
   padding-bottom: 10vh;
+}
+
+.banner-title-xs{
+  padding: 10px 0;
+  h1 {
+    font-size: 40px;
+  }
+}
+
+#xs-tagline{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 
