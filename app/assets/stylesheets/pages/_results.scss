@@ -1,5 +1,5 @@
 .search-container {
-  border-bottom: 1px solid lightgrey;
+
 }
 
 .form {
@@ -16,6 +16,7 @@
   background-color: black;
   color: white;
   font-size: 14px;
+  padding: 10px 30px;
 }
 
 
@@ -34,14 +35,14 @@
   }
   .container-map{
    position: fixed;
-   width: 35%;
+   width: 40%;
    right: 0px;
   }
 
 @media (min-width: 768px){
  .container-results{
    .container {
-    max-width:65%;
+    max-width:60%;
   }
  }
 }

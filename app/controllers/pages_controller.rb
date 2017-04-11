@@ -16,7 +16,11 @@ class PagesController < ApplicationController
     else
       @sessions = @sessions.select { |session| session.sport == Sport.find_by_name(params[:search_query][:sport]) }
     end
+
+    #reformat the hash so its linked to a sport name
+
     @sessions = @sessions.group_by { |session| session.training_id }
+
     #google maps pins
     trainings = []
     @sessions.each do |training, _sessions|
