@@ -1,0 +1,23 @@
+<div class="training-all-details">
+  <div class="training-tabs">
+    <% ["Training", "Trainer", "Reviews", "Location"].each_with_index do |tab_name, i| %>
+      <div class="training-tab <%= 'active' if i == 0 %>" data-target=".<%= tab_name.downcase %>-content">
+        <%= tab_name %>
+      </div>
+    <% end %>
+  </div>
+  <div class="training-content">
+    <% ["Training", "Trainer", "Reviews", "Location"].each_with_index do |tab_name, i| %>
+      <div class="<%= tab_name.downcase %>-content training-tab-contents <%= 'hidden' if i >= 1 %>">
+        <%= render partial: "trainings/shared/#{tab_name.downcase}" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
