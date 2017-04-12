@@ -7,6 +7,7 @@
 //= require bootstrap-datetimepicker
 //= require pickers
 //= require gmaps/google
+//= require btndown
 
 
 $(".alert" ).slideUp(3000);
@@ -69,6 +70,7 @@ $(document).scroll(function() {
   }
 });
 });
+
 
 
 
