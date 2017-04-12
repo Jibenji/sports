@@ -88,14 +88,60 @@
   width: 350px;
   border: 1px solid black;
 }
-.card-results {
-  width: 500px;
+.photo-result-card {
+  height: 204px;
+  width: 300px;
   color: #FFFFFF;
-  justify-content: center;
+  // justify-content: center;
   // text-align: center;
    background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
+  margin-right: 20px;
+}
+
+.description-result-card{
+  height: auto;
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+   color: black;
+  }
+  :hover{
+   text-decoration: none;
+  }
+  h3 {
+  color: black;
+  font-size: 19px;
+ }
+}
+
+#book-button{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  line-height: 25px;
+  padding: 5px 20px;
+}
+
+
+.result-card{
+
+  position: relative;
+  padding: 10px;
+  display: flex;
+   height: auto;
+  width: 600px;
+  border: #FAFAFA solid 1px;
+  margin-bottom: 20px;
+  &:hover {
+  border-color: #8d8d8d;
+    transition: all 200ms ease;
+  }
 }
 
 .training-details {
@@ -111,8 +157,6 @@
   background-color: #FAFAFA;
   border: #FAFAFA solid 1px;
   padding-left: 20px;
-
-
   h3 {
     font-size: 16px;
   }
