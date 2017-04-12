@@ -1,18 +1,23 @@
-<div class="outer-card-results text-center">
 
-    <%= link_to training_path(session_model.training) do %>
-    <div class="card card-results" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path session_model.training.profile.trainer.banner_picture %>')">
-      <div class="training-title-card">
-        <%= session_model.training.title %>
-        <img class="avatar-results" src="<%= session_model.training.profile.avatar_picture %>">
-      </div>
-
-      <%# sessions.each do |session| %>
-      <%#= session.date %>
-      <%#= session.time %>
-      <%# end %>
+  <%= link_to training_path(session_model.training) do %>
+  <div class="result-card" >
+  <div class="photo-result-card" style="background-image: url('<%= cl_image_path session_model.training.profile.trainer.banner_picture %>')">
     </div>
-    <% end %>
-</div>
+    <div class="description-result-card">
+      <ul class="list-inline title-card">
+        <li><h3><%=session_model.training.title%> |</h3></li>
+        <li><h3><%=session_model.training.profile.first_name + " " + session_model.training.profile.last_name%></h3></li>
+        <li><p>Date: <%= session_model.training.sessions.first.date %></p></li>
+        <li><p><%= session_model.training.sessions.first.time.strftime("at %I:%M%p")%></p></li>
+        <li><p>Duration: <%= session_model.training.duration %> minutes </p></li>
+        <li><p>Location: <%=session_model.training.address %></p></li>
+        <li><p>Price: €<%= session_model.training.price %></p></li>
+      </ul>
+<%= link_to "Book", training_path(session_model.training), class: "navbar-wagon-item navbar-wagon-button btn", id:"book-button" %>
+    </div>
+  </div>
+  <% end %>
+
+
 
 
