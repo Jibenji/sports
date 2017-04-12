@@ -27,6 +27,7 @@
   height: 100vh;
   width: 50%;
   background-size: cover;
+  z-index: -100;
 }
 
 .banner-photo-xs{
@@ -46,6 +47,10 @@
     bottom: 20px;
     left: 23%;
     color: lightgrey;
+    &:hover {
+color: black;
+transition: all 200ms ease;
+    }
 }
 
 .searchs-button {
@@ -56,7 +61,7 @@
   padding-top: 10px;
   margin-left: 10px;
   border-radius: 5px;
-  background-color: #272D2D;
+  background-color: #3066BE;
   color: white;
   font-size: 16px;
   border: none;
