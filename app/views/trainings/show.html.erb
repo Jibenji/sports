@@ -17,13 +17,14 @@
 
   <% if session.date.strftime("%Y-%m-%d") != previous.date.strftime("%Y-%m-%d") or @sessions.first == session %>
     <h4>
-      <%= session.date.strftime("%Y-%m-%d") %> :
+      <%= session.date.strftime("%a, %e %b %Y") %>
     </h4>
+    <p>Select a time:</p>
   <% end %>
 
   <div>
 
-    <%= link_to "#{session.time.strftime("at %I:%M%p")}", participants_path(session_id: session), class: "blue-button submit-button" %>
+    <%= link_to "#{session.time.strftime("at %H:%M")}", participants_path(session_id: session), class: "blue-button" %>
   </div>
 
     <% previous = session %>
