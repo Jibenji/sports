@@ -34,7 +34,14 @@ class PagesController < ApplicationController
       marker.lng training.longitude
     end
 
-    @sessions = @sessions[@sessions.keys.first]
+    @trainings_id = []
+    @sessions.each do |k,v|
+      @trainings_id << k
+    end
+    @trainings = []
+    @trainings_id.each do |training_id|
+      @trainings << Training.find(training_id)
+    end
  end
 
   private
