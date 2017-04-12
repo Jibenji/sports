@@ -16,6 +16,9 @@ $(document).ready(function(){
   if ($('#validation-sign-up').hasClass('validation-failed')) {
     $('#mySignUpModal').modal('show');
   }
+
+
+  //home-page-sports-tabs responsivness
   $(function(){
     $(".tab").on("click", function(e){
           // Change active tab
@@ -30,7 +33,29 @@ $(document).ready(function(){
           var tabSelector = $(this).data("target");
           $(tabSelector).removeClass("hidden");
         });
-  });
+
+      });
+
+
+  //training-page-tabs responsivness
+  $(function(){
+    $(".training-tab").on("click", function(e){
+          // Change active training-tab
+          $(".training-tab").removeClass("active");
+          $(this).addClass("active");
+
+
+          var content = $(this).data("target");
+          $(".training-tab-content").addClass("hidden");
+          $(content).removeClass("hidden");
+
+          var tabSelector = $(this).data("target");
+          $(tabSelector).removeClass("hidden");
+        });
+      });
+})
+
+ 
 
   var scroll_start = 0;
   var startchange = $('.navbar-wagon');

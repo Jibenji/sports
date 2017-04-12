@@ -1,9 +1,41 @@
 
-<p>Those are the training's sessions for now</p>
+<div class="training-banner">
+  <div class="training-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @training.profile.trainer.banner_picture, height: 300, width: 400,crop: :fill %>')">
+    <h1><%= @training.title %></h1>
+  </div>
+</div>
 
-<% @sessions.each do |session| %>
-  <%= session.date %>
-  <%= session.time %>
-  <%= link_to "Book this session", new_session_booking_path(session.id) %>
-<% end %>
+<div class="wrapper-training">
 
+<%= render 'shared/training-show' %>
+
+<div class="training-booking">
+  <div>
+    <p><%= @training.price %></p>
+    <p><%= @training.level %></p>
+    <p><%= @training.duration %></p>
+  </div>
+  <div class="sessions">
+    <p>Training's sessions</p>
+    <%= simple_form_for :booking, url: participants_path do |f| %>
+      <%= f.input :session_id, collection: @sessions, label_method: :date, prompt: "Sessions" %>
+      <%= f.button :submit, "Book this session", class: "black-button submit-button" %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<!-- action=url method=post/get/patch
+forms bunch of input
+submit -> build a hash, send it to the url
+
+
+simple_form_for object.analyze = kind of object, then it knows what controller to go to:
+@booking, @session,
+
+then it knows to go to a nested route.
+
+booking class -> booking controller
+
+if object is empty -> create
+if data -> update  -->
