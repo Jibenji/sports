@@ -1,6 +1,4 @@
-.search-container {
 
-}
 
 .form {
   position: relative;
@@ -19,34 +17,36 @@
   padding: 10px 30px;
 }
 
-
-  .result-wrapper {
+.result-wrapper {
     position: relative;
-  }
+}
 
   .container-results{
     width:100%;
     position: absolute;
     overflow-y: scroll;
 
-   .container {
-    margin: 0px;
-   }
   }
-  .container-map{
-   position: fixed;
-   width: 40%;
-   right: 0px;
+  .map-box{
+    margin-right: -15px;
+    padding-left: 30px;
+    margin-top: 80px;
+
   }
 
-@media (min-width: 768px){
- .container-results{
-   .container {
-    max-width:60%;
-  }
- }
+
+#map {
+  height: 80vh;
 }
 
 
+.search-training-session {
+  padding-bottom: 30px;
+}
 
-
+.result-cards-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}

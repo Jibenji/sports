@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/participants', to: 'bookings#new'
 
   get '/results', to: 'pages#results'
-  post '/results', to: 'pages#results'
+  # post '/results', to: 'pages#results'
 
   devise_scope :user do
     match '/sessions/user', to: 'devise/sessions#create', via: :post

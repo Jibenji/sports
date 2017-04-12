@@ -39,6 +39,9 @@
   }
 }
 
+#black-tabs{
+  margin-left: 5px;
+}
 .tab.active {
 
   background: black;
@@ -71,7 +74,7 @@
 
   .tab-name {
     position: relative;
-    top: -110px;
+    top: -220px;
     color: #ffffff;
     font-weight: bold;
     font-size: 1.5em;

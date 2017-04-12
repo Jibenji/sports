@@ -2,6 +2,7 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <%= image_tag "logo-soplex.png" %>
+
   <% end %>
 
   <!-- Right Navigation -->
@@ -21,20 +22,20 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if current_profile.avatar_picture.present? %>
-        <img src="<%= cl_image_path current_profile.avatar_picture, crop: :fill %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <img src="<%= cl_image_path current_profile.avatar_picture, crop: :fill, height: 32, width: 32 %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <% else %>
         <img src="<%= image_url 'blue.jpg', crop: :fill %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to edit_profile_path do %>
-             <%= t(".profile", default: "Profile") %>
+             <%= t(".profile", default: "Edit profile") %>
             <% end %>
           </li>
           <% if current_profile.trainer_id %>
            <li>
-            <%= link_to edit_trainer_path(current_profile) do %>
-             <%= t(".profile", default: "Trainer profile") %>
+            <%= link_to trainer_path(current_profile) do %>
+             <%= t(".profile", default: "Show trainer profile") %>
             <% end %>
           </li>
           <li>

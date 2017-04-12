@@ -11,8 +11,9 @@ class PagesController < ApplicationController
 
   def results
     @sessions = Session.where(date: params[:search_query][:date])
+
     if params[:search_query][:sport] == "All Sports"
-      @sessions
+      @sessions = @sessions
     else
       @sessions = @sessions.select { |session| session.sport == Sport.find_by_name(params[:search_query][:sport]) }
     end
@@ -23,14 +24,17 @@ class PagesController < ApplicationController
 
     #google maps pins
     trainings = []
-    @sessions.each do |training, _sessions|
-      trainings << Training.find(training)
+
+    @sessions.each do |training_id, _sessions|
+      trainings << Training.find(training_id)
     end
+
     @hash = Gmaps4rails.build_markers(trainings) do |training, marker|
       marker.lat training.latitude
       marker.lng training.longitude
     end
-    render :results
+
+    @sessions = @sessions[@sessions.keys.first]
  end
 
   private

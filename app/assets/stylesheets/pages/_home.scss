@@ -30,6 +30,14 @@
   }
 }
 
+.discover {
+  font-family: raleway;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 50px;
+
+}
+
 .our-sports {
   font-weight: bold;
   font-size: 10px;
@@ -47,7 +55,6 @@
 
 .absolute{
   position: absolute;
-  top: 50%;
   left: 50%;
 }
 
@@ -65,8 +72,19 @@
 }
 
 .overview-container{
-  margin-left: 110px;
-  margin-bottom: 150px;
+  margin-left: 98px;
+  height: 400px;
 }
 
 
+.quote {
+ font-family: 'open sans';
+ padding-top: 0px;
+ font-weight: 400;
+font-size: 26px;
+
+ h3 {
+  font-size: 14px;
+}
+
+}

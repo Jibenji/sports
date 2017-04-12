@@ -33,6 +33,7 @@ $(document).ready(function(){
           var tabSelector = $(this).data("target");
           $(tabSelector).removeClass("hidden");
         });
+
       });
 
 
@@ -53,6 +54,21 @@ $(document).ready(function(){
         });
       });
 })
+
+ 
+
+  var scroll_start = 0;
+  var startchange = $('.navbar-wagon');
+  var offset = startchange.offset();
+  $(document).scroll(function() {
+    scroll_start = $(this).scrollTop();
+    if(scroll_start > offset.top) {
+      $('.navbar-wagon').css('background-color', 'rgba(255,255,255,0.9)');
+    } else {
+      $('.navbar-wagon').css('background-color', 'transparent');
+    }
+  });
+});
 
 
 
