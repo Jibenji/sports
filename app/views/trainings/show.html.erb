@@ -10,17 +10,25 @@
 <%= render 'trainings/training-show' %>
 
 <div class="training-booking">
-  <div>
-    <p><%= @training.address %> <%= @training.city %></p>
-    <p>Price: € <%= @training.price %></p>
-    <p>Level: <%= @training.level %></p>
-    <p>Duration: <%= @training.duration %> minutes</p>
-  </div>
   <div class="sessions">
-    <%= simple_form_for :booking, url: participants_path do |f| %>
-      <%= f.input :session_id, collection: @sessions, label_method: :date, prompt: "Select time", label: false %>
-      <%= f.button :submit, "Book this session", class: "blue-button submit-button" %>
-    <% end %>
+    <p>Training's sessions for <%= @training.duration %> H</p>
+  <% previous = @sessions.first %>
+  <% @sessions.each do |session| %>
+
+  <% if session.date.strftime("%Y-%m-%d") != previous.date.strftime("%Y-%m-%d") or @sessions.first == session %>
+    <h4>
+      <%= session.date.strftime("%Y-%m-%d") %> :
+    </h4>
+  <% end %>
+
+  <div>
+
+    <%= link_to "#{session.time.strftime("at %I:%M%p")}", participants_path(session_id: session), class: "blue-button submit-button" %>
+  </div>
+
+    <% previous = session %>
+  <% end %>
+
   </div>
 </div>
 </div>
