@@ -22,11 +22,13 @@
   <% end %>
 
   <div>
-    <%= link_to "#{session.time.strftime("at %I:%M%p")}", participants_path(session_id: session), class: "btn btn primary" %>
+
+    <%= link_to "#{session.time.strftime("at %I:%M%p")}", participants_path(session_id: session), class: "blue-button submit-button" %>
   </div>
 
     <% previous = session %>
   <% end %>
+
   </div>
 </div>
 </div>
