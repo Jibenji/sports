@@ -92,7 +92,10 @@
   width: 500px;
   color: #FFFFFF;
   justify-content: center;
-  text-align: center;
+  // text-align: center;
+   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 .training-details {
@@ -102,16 +105,20 @@
 .card-training {
   height: 150px;
   width: 600px;
-  border-radius: 3px;
-  color: black;
+
+  border-radius: 1px;
+  color: white;
+
   margin-bottom: 20px;
   background-color: #FAFAFA;
   border: #FAFAFA solid 1px;
   padding-left: 20px;
 
+
   h3 {
     font-size: 16px;
   }
+
 
   p {
     font-size: 12px;
@@ -128,3 +135,4 @@
 
 }
 }
+

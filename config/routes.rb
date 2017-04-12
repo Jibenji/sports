@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/results', to: 'pages#results'
-  post '/results', to: 'pages#results'
+  # post '/results', to: 'pages#results'
 
   devise_scope :user do
     match '/sessions/user', to: 'devise/sessions#create', via: :post
