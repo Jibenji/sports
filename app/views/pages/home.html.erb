@@ -33,25 +33,59 @@
 </div>
 
 <div class="overview-container">
-    <% @sports.each_with_index do |sport, i| %>
-      <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
-      <% sport.trainings.cheap.each do |training|  %>
+  <% @sports.each_with_index do |sport, i| %>
+  <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
+    <div class="col-sm-6">
+      <% sport.trainings.each do |training|  %>
+
       <div class="card-training relative">
         <div class="card-training-description">
-          <h3><%= training.title %></h3>
-          <p><%= training.description %></p>
-          <p><%= training.time %></p>
-          <p><%= training.duration %></p>
-        </div>
-        <div>
+          <ul class="list-inline title-card">
+            <li><h3><%=training.title%> -</h3></li>
+            <li><h3><%=training.level%>  |</h3></li>
+            <li><p>Date: <%= training.sessions.first.date %></p></li>
+            <li><p><%= training.sessions.first.time.strftime("at %I:%M%p")%></p></li>
+            <li><p>Duration: <%= training.duration %> minutes </p></li>
+            <h4>Location: <%=training.address %></h4>
+            <p>Price: €<%= training.price %></p>
+            <p>Places available: <%= training.group_capacity %></p>
+          </ul>
           <%= link_to "Book", training_path(training), class: "buy-button" %>
         </div>
-
       </div>
       <% end %>
-      </div>
-    <% end %>
+    </div>
+
+    <div class="col-sm-5 quote">
+      <% if sport.name == "Yoga" %>
+      "A photographer gets people to pose for him. A yoga instructor gets people to pose for themselves."
+      <br><h3>T. Guillemets</h3>
+
+      <% end %>
+      <% if sport.name == "Dancing" %>
+      “Obstacles don’t have to stop you. If you run into a wall, don’t turn around and give up. Figure out how to climb it, go through it, or work around it.”
+      <br><h3>Michael Jordan</h3>
+      <% end %>
+
+      <% if sport.name == "Bootcamp" %>
+      “You are never really playing an opponent. You are playing yourself, your own highest standards, and when you reach your limits, that is real joy.”
+      <br><h3>Homer Rice</h3>
+      <% end %>
+
+      <% if sport.name == "Running" %>
+      “You can motivate by fear, and you can motivate by reward. But both those methods are only temporary. The only lasting thing is self motivation.”
+      <br><h3>Muhammad Ali</h3>
+      <% end %>
+
+      <% if sport.name == "Boxing" %>
+      “I hated every minute of training, but I said, ‘Don’t quit. Suffer now and live the rest of your life as a champion.”
+      <br><h3>Muhammad Ali</h3>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
 </div>
+
 
 
 
