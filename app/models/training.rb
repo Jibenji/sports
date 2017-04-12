@@ -5,7 +5,9 @@ class Training < ApplicationRecord
 
   belongs_to :sport
   belongs_to :profile
+
   has_many :sessions, dependent: :destroy
+
   validates :sport, presence: true
   validates :title, presence: true
   validates :description, presence: true
