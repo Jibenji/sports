@@ -3,9 +3,15 @@
   <%#= f.input :level, prompt: "Level", label: false, collection: ["Beginner", "Medium", "Difficult"] %>
   <%= f.input :date, as: :date_picker, class: "datepicker", label: false %>
   <%#= f.input :time, as: :time_picker, placeholder: "Time", label: false  %>
-  <%= f.button :submit, "Search", class: "black-white-button" %>
+  <%= f.button :submit, "Search", class: "black-white-button", id: "filter-button" %>
   <% end %>
+
+  <% @sessions.each do |session_model| %>
+  <%= render partial: 'session_card', locals: { session_model: session_model } %>
+  <% end %>
+
 </div>
+
 
 <% if @sessions %>
 <% @sessions.each do |session_model| %>

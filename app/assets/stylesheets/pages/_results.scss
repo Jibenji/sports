@@ -17,25 +17,44 @@
   padding: 10px 30px;
 }
 
-.result-wrapper {
-    position: relative;
+#filter-button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #3066BE;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+
+  &:hover {
+    color: white;
+    border-color: 1px solid white;
+  }
 }
 
-  .container-results{
-    width:100%;
-    position: absolute;
-    overflow-y: scroll;
+.result-wrapper {
+  position: relative;
+}
 
-  }
-  .map-box{
-    margin-right: -15px;
-    padding-left: 30px;
-    margin-top: 80px;
+.container-results{
+  width:100%;
+  position: absolute;
+  overflow-y: scroll;
 
-  }
+}
+.map-box{
+  margin-right: -15px;
+  padding-left: 30px;
+
+}
 
 .resulsts-overview{
   margin-bottom: 150px;
+  margin-left: 25px;
 }
 
 #map {

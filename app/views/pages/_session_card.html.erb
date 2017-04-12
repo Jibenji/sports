@@ -13,7 +13,7 @@
         <li><p>Location: <%=session_model.training.address %></p></li>
         <li><p>Price: €<%= session_model.training.price %></p></li>
       </ul>
-<%= link_to "Book", training_path(session_model.training), class: "navbar-wagon-item navbar-wagon-button btn", id:"book-button" %>
+<%= link_to "Book", training_path(session_model.training), class: "buy-button"%>
     </div>
   </div>
   <% end %>
