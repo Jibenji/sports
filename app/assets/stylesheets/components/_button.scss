@@ -15,6 +15,23 @@
 }
 }
 
+.blue-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 1px;
+  line-height: 40px;
+  background-color: #3066BE;
+  color: white;
+  font-size: 14px;
+  border: none;
+&:hover {
+  text-decoration: none;
+  color: #3066BE;
+  background: white;
+  border: none;
+}
+}
+
 .yellow-button {
   padding: 20px;
   border-radius: 1px;

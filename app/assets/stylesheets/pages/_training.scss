@@ -27,6 +27,7 @@
   justify-content: center;
   overflow-y: scroll;
   flex: 0 0 100%;
+
 }
 .training-tabs a {
   color: black;
@@ -44,7 +45,7 @@
 }
 
 .training-all-details {
-  padding: 10px;
+padding: 50px 0 0 30px;
   display: flex;
   flex-direction: column;
   flex: 0 0 60%;
@@ -52,7 +53,8 @@
 
 .training-content {
   flex: 0 0 100%;
-  padding-top: 10px;
+   height: 500px;
+  padding: 40px 40px 100px 40px;
 }
 
 
@@ -77,13 +79,18 @@
 }
 
 .training-booking {
-  padding: 10px;
-  flex: 0 0 40%;
+  margin-right: 150px;
+  margin-top: 137px;
+  padding: 50px;
+  flex: 0 0 280px;
+  border: 1px solid #8d8d8d;
 }
 
 #map-training {
-  margin: 0;
-  padding: 0;
+  height: 200px;
+  width: 200px;
+  margin: 50px;
+
 }
 
 
