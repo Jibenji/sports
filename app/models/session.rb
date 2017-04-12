@@ -1,5 +1,6 @@
 class Session < ApplicationRecord
   belongs_to :training
+
   has_one :sport, through: :training
   has_many :bookings
 

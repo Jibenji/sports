@@ -28,13 +28,13 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to edit_profile_path do %>
-             <%= t(".profile", default: "Profile") %>
+             <%= t(".profile", default: "Edit profile") %>
             <% end %>
           </li>
           <% if current_profile.trainer_id %>
            <li>
-            <%= link_to edit_trainer_path(current_profile) do %>
-             <%= t(".profile", default: "Trainer profile") %>
+            <%= link_to trainer_path(current_profile) do %>
+             <%= t(".profile", default: "Show trainer profile") %>
             <% end %>
           </li>
           <li>
