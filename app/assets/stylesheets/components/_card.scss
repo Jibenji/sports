@@ -130,14 +130,12 @@
 
 
 .result-card{
-
-  position: relative;
-  padding: 10px;
+  padding-top: 25px;
+  margin-top: 25px;
   display: flex;
    height: auto;
   width: 600px;
-  border: #FAFAFA solid 1px;
-  margin-bottom: 20px;
+  border-top: #D7D6D6 solid 1px;
   &:hover {
   border-color: #8d8d8d;
     transition: all 200ms ease;
