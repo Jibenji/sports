@@ -7,8 +7,9 @@
   <% end %>
 </div>
 
-
+<% if @sessions %>
 <% @sessions.each do |session_model| %>
 <%= render partial: 'session_card', locals: { session_model: session_model } %>
+<% end %>
 <% end %>
 
