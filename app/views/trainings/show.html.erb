@@ -11,15 +11,15 @@
 
 <div class="training-booking">
   <div>
-    <p><%= @training.price %></p>
-    <p><%= @training.level %></p>
-    <p><%= @training.duration %></p>
+    <p><%= @training.address %> <%= @training.city %></p>
+    <p>Price: € <%= @training.price %></p>
+    <p>Level: <%= @training.level %></p>
+    <p>Duration: <%= @training.duration %> minutes</p>
   </div>
   <div class="sessions">
-    <p>Training's sessions</p>
     <%= simple_form_for :booking, url: participants_path do |f| %>
-      <%= f.input :session_id, collection: @sessions, label_method: :date, prompt: "Sessions" %>
-      <%= f.button :submit, "Book this session", class: "black-button submit-button" %>
+      <%= f.input :session_id, collection: @sessions, label_method: :date, prompt: "Select time", label: false %>
+      <%= f.button :submit, "Book this session", class: "blue-button submit-button" %>
     <% end %>
   </div>
 </div>
