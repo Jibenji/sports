@@ -105,16 +105,34 @@
 .card-training {
   height: 150px;
   width: 600px;
+
   border-radius: 1px;
   color: white;
+
   margin-bottom: 20px;
-  background-color: #0582CA;
-  border: solid #E6E8E6 1px;
+  background-color: #FAFAFA;
+  border: #FAFAFA solid 1px;
   padding-left: 20px;
+
+
+  h3 {
+    font-size: 16px;
+  }
 
 
   p {
     font-size: 12px;
   }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  &:hover {
+  border-color: #8d8d8d;
+    transition: all 400ms ease;
+
+
+}
 }
 

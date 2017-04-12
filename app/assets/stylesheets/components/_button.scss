@@ -57,14 +57,20 @@
 }
 
 .buy-button{
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 5px;
   line-height: 40px;
-  background-color: white;
-  color: #0582CA;
+  background-color: #272D2D;
+  color: white;
   font-size: 16px;
   position: absolute;
-  top: 50%;
-  right: 1.5em;
+  top: 65%;
+  right: 1.0em;
+
+  &:hover {
+  color: white;
+  border-color: 1px solid white;
+
+}
 }

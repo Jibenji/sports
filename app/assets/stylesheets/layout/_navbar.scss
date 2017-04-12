@@ -63,15 +63,16 @@
 
 /* Navbar right button */
 .navbar-wagon-button {
+ 
   margin-left: 10px;
   border-radius: 1px;
   line-height: 40px;
   font-size: 14px;
-  border: 1px solid black;
   color: white;
   background: black;
   transition: all 200ms ease;
 }
+
 .navbar-wagon-button:hover {
   background-color: white;
   color: black;
