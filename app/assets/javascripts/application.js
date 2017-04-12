@@ -46,7 +46,7 @@ $(document).ready(function(){
 
 
           var content = $(this).data("target");
-          $(".training-tab-content").addClass("hidden");
+          $(".training-tab-contents").addClass("hidden");
           $(content).removeClass("hidden");
 
           var tabSelector = $(this).data("target");

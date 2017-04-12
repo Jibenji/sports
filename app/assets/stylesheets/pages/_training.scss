@@ -24,10 +24,9 @@
 .training-tabs {
   background: #white;
   display: flex;
-  padding: 10px 10px 0 10px;
   justify-content: center;
   overflow-y: scroll;
-  flex: 0 0 60%;
+  flex: 0 0 100%;
 }
 .training-tabs a {
   color: black;
@@ -43,6 +42,20 @@
   opacity: 0.5;
   margin-bottom: 0;
 }
+
+.training-all-details {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 60%;
+}
+
+.training-content {
+  flex: 0 0 100%;
+  padding-top: 10px;
+}
+
+
 .training-tab {
   background: white;
   flex: 0 0 25%;
@@ -50,8 +63,6 @@
   padding: 10px 0px;
 
   border: 1px solid black;
-
-  // margin: 5px;
 
   &:hover {
     color: #8d8d8d;
@@ -66,8 +77,16 @@
 }
 
 .training-booking {
+  padding: 10px;
   flex: 0 0 40%;
 }
+
+#map-training {
+  margin: 0;
+  padding: 0;
+}
+
+
 
 
 

@@ -8,7 +8,10 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    @hash = Gmaps4rails.build_markers(@training) do |training, marker|
+      marker.lat @training.latitude
+      marker.lng @training.longitude
+    end
   end
 
   def new
