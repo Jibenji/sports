@@ -1,8 +1,8 @@
 <div class="tabs">
   <%= active_link_to "Profile", edit_profile_path, class: "tab" %>
- <% if current_profile.trainer_id %>
-  <%= active_link_to "Trainer Profile", edit_trainer_path(current_profile), class: "tab" %>
-  <%= active_link_to "Your trainings", trainings_path, class: "tab" %>
+  <% if current_profile.trainer_id %>
+    <%= active_link_to "Trainer Profile", edit_trainer_path(current_profile), class: "tab" %>
+    <%= active_link_to "Your trainings", trainings_path, class: "tab" %>
   <% end %>
   <%= active_link_to "Your Bookings", bookings_path, class: "tab" %>
 </div>

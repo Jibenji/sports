@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  get '/participants', to: 'bookings#new'
+  post '/participants', to: 'bookings#new'
+
   get '/results', to: 'pages#results'
   post '/results', to: 'pages#results'
 
@@ -28,6 +31,8 @@ Rails.application.routes.draw do
   resources :trainings, only: [:new, :edit] do
     resources :sessions, only: [:new, :create, :index]
   end
+
+
 
   resources :sessions, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
