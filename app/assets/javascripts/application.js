@@ -18,7 +18,6 @@ $(document).ready(function(){
     $('#mySignUpModal').modal('show');
   }
 
-
   //home-page-sports-tabs responsivness
   $(function(){
     $(".tab").on("click", function(e){
@@ -55,20 +54,17 @@ $(document).ready(function(){
         });
   });
 
-
-
-
-var scroll_start = 0;
-var startchange = $('.navbar-wagon');
-var offset = startchange.offset();
-$(document).scroll(function() {
-  scroll_start = $(this).scrollTop();
-  if(scroll_start > offset.top) {
-    $('.navbar-wagon').css('background-color', 'rgb(255,255,255)');
-  } else {
-    $('.navbar-wagon').css('background-color', 'transparent');
-  }
-});
+  var scroll_start = 0;
+  var startchange = $('.navbar-wagon');
+  var offset = startchange.offset();
+  $(document).scroll(function() {
+    scroll_start = $(this).scrollTop();
+    if(scroll_start > offset.top) {
+      $('.navbar-wagon').css('background-color', 'rgb(255,255,255)');
+    } else {
+      $('.navbar-wagon').css('background-color', 'transparent');
+    }
+  });
 });
 
 $("#search_query_date").on('click', function() {
