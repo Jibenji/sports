@@ -12,7 +12,26 @@ padding: 5px 40px;
 }
 
 .confirm-booking{
-margin:100px 200px 100px 200px;
-padding: 100px 100px 100px 130px;
-border: 1px solid black;
+  padding: 50px;
+}
+
+.confirm-inline{
+  display: flex !important;
+  justify-content: space-around;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+#new_booking {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .select {
+    height: 50px;
+    box-shadow: none;
+    border-radius: 0;
+  }
 }
