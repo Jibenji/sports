@@ -17,7 +17,7 @@
      <div class="form-inline search-field-banner" id="padding-large-search">
       <%= simple_form_for :search_query, url: results_path, method: :get do |f| %>
       <div class="form-inputs">
-        <%= f.input :sport, autofocus: true, collection: @sports_selection, prompt: "Pick a sport  ▼", label: false, class: "black-button" %>
+        <%= f.input :sport, autofocus: true, collection: @sports_selection, prompt: "Pick a sport  ▾", label: false %>
         <%= f.input :date, as: :date_picker, placeholder: "Pick a date", label: false %>
         <%= f.button :submit, "Search", class: "searchs-button form-inline" %>
       </div>

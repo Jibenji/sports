@@ -71,6 +71,9 @@ $(document).scroll(function() {
 });
 });
 
+$("#search_query_date").on('click', function() {
+  $('.datetimepicker button').click()
+})
 
 
 

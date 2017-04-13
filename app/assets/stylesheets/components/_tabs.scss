@@ -14,40 +14,29 @@
   color: #8d8d8d;
   opacity: 0.8;
 }
-.tabs h3 {
-  font-size: 17px;
-  font-weight: bold;
-  margin-top: 0;
-}
-.tabs p {
-  opacity: 0.5;
-  margin-bottom: 0;
-}
+
+
 .tab {
   background: white;
   flex: 0 0 25%;
   text-align: center;
   padding: 20px 0px;
+  border-bottom: 1px solid $light-gray;
 
-  border-bottom: 1px solid black;
 
-  // margin: 5px;
 
   &:hover {
     color: #8d8d8d;
   }
 }
 
-#black-tabs{
-  margin-left: 5px;
-}
 .tab.active {
 font-weight: 600;
 letter-spacing: 0.5px;
   background: white;
-  color: #3066BE;
+  color: black;
 
-   border-bottom: 1.5px solid #3066BE;
+   border-bottom: 1.5px solid black;
 
 }
 
@@ -66,9 +55,6 @@ letter-spacing: 0.5px;
   &:active {
     position: relative;
     top: 1px;
-  }
-
-  &.active {
     border: none;
     background: none;
   }
