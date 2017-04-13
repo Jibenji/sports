@@ -43,12 +43,10 @@
           <ul class="list-inline title-card">
             <li><h3><%=training.title%> -</h3></li>
             <li><h3><%=training.level%>  |</h3></li>
-            <li><p>Date: <%= training.sessions.first.date %></p></li>
-            <li><p><%= training.sessions.first.time.strftime("at %I:%M%p")%></p></li>
-            <li><p>Duration: <%= training.duration %> minutes </p></li>
-            <h4>Location: <%=training.address %></h4>
-            <p>Price: €<%= training.price %></p>
-            <p>Places available: <%= training.group_capacity %></p>
+            <li><p><i class="fa fa-calendar-o" aria-hidden="true"></i><%= training.sessions.first.date %><li><p><%= training.sessions.first.time.strftime("at %I:%M%p")%></li>
+            <li><p><i class="fa fa-clock-o" aria-hidden="true"></i>  <%= training.duration %> minutes </p></li>
+            <h4><i class="fa fa-map-marker" aria-hidden="true"></i> <%=training.address %></h4>
+            <li><p><i class="fa fa-user" aria-hidden="true"></i> <%= training.group_capacity %> person, price: </i> €<%= training.price %></p></li>
           </ul>
           <%= link_to "Book", training_path(training), class: "buy-button" %>
         </div>

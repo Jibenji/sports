@@ -89,24 +89,19 @@
   border: 1px solid black;
 }
 .photo-result-card {
-  height: 204px;
-  width: 300px;
+  height: 240px;
   color: #FFFFFF;
-  // justify-content: center;
-  // text-align: center;
    background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   margin-right: 20px;
+  border-radius: 2px;
 }
 
 .description-result-card{
   height: auto;
-  width: 300px;
   padding: 10px;
   font-size: 14px;
-  display: flex;
-  align-items: center;
   justify-content: center;
   p {
    color: black;
@@ -120,12 +115,8 @@
  }
 }
 
-#book-button{
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  line-height: 25px;
-  padding: 5px 20px;
+#book-button {
+  // position: absolute;
 }
 
 
@@ -134,7 +125,7 @@
   margin-top: 25px;
   display: flex;
    height: auto;
-  width: 600px;
+  // width: 600px;
   border-top: #D7D6D6 solid 1px;
   &:hover {
   border-color: #8d8d8d;
@@ -175,4 +166,3 @@
 
 }
 }
-
