@@ -17,8 +17,8 @@
   top: 10px;
 }
 .card a:hover, .card a:focus {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 .card-description {
  text-align: center;
@@ -91,7 +91,7 @@
 .photo-result-card {
   height: 240px;
   color: #FFFFFF;
-   background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   margin-right: 20px;
@@ -105,14 +105,14 @@
   justify-content: center;
   p {
    color: black;
-  }
-  :hover{
+ }
+ :hover{
    text-decoration: none;
-  }
-  h3 {
+ }
+ h3 {
   color: black;
   font-size: 19px;
- }
+}
 }
 
 #book-button {
@@ -124,11 +124,11 @@
   padding-top: 25px;
   margin-top: 25px;
   display: flex;
-   height: auto;
+  height: auto;
   // width: 600px;
   border-top: #D7D6D6 solid 1px;
   &:hover {
-  border-color: #8d8d8d;
+    border-color: #8d8d8d;
     transition: all 200ms ease;
   }
 }
@@ -138,7 +138,6 @@
 }
 
 .card-training {
-  height: 150px;
   width: 600px;
   border-radius: 3px;
   color: black;
@@ -146,13 +145,20 @@
   background-color: #FAFAFA;
   border: #FAFAFA solid 1px;
   padding-left: 20px;
+  padding-bottom: 10px;
   h3 {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
   }
 
+  h4 {
+    font-weight: bold;
+  }
 
   p {
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 12px;
+    padding-left: 8px;
   }
 
   h4 {
@@ -160,9 +166,21 @@
   }
 
   &:hover {
-  border-color: #8d8d8d;
+    border-color: #8d8d8d;
     transition: all 400ms ease;
 
 
+  }
 }
+
+.flex-around {
+  justify-content: space-between;
+  display: flex;
+}
+
+.flex-right {
+  flex-direction: row;
+  display: flex;
+  padding-top: 27px;
+  padding-right: 17px;
 }
