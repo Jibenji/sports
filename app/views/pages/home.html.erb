@@ -40,14 +40,21 @@
 
       <div class="card-training relative">
         <div class="card-training-description">
-          <ul class="list-inline title-card">
-            <li><h3><%=training.title%> -</h3></li>
-            <li><h3><%=training.level%>  |</h3></li>
-            <li><p><i class="fa fa-calendar-o" aria-hidden="true"></i><%= training.sessions.first.date %><li><p><%= training.sessions.first.time.strftime("at %I:%M%p")%></li>
-            <li><p><i class="fa fa-clock-o" aria-hidden="true"></i>  <%= training.duration %> minutes </p></li>
-            <h4><i class="fa fa-map-marker" aria-hidden="true"></i> <%=training.address %></h4>
-            <li><p><i class="fa fa-user" aria-hidden="true"></i> <%= training.group_capacity %> person, price: </i> €<%= training.price %></p></li>
-          </ul>
+          <div class="title-card">
+                      <div class="flex-around">
+
+            <h3><%=training.title%></h3>
+            <div class="flex-right">
+           <p><i class="fa fa-calendar-o" aria-hidden="true"></i> <%=training.sessions.first.date %></p>
+           <p><%= training.sessions.first.time.strftime("at %I:%M%p")%></p>
+           <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%=training.duration %> minutes </p>
+            </div>
+            </div>
+            <h4>Description: <%=training.description %></h4>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> <%=training.address %></p>
+            <p><i class="fa fa-user" aria-hidden="true"></i> <%= training.group_capacity %> people participating</p>
+            <p><i class="fa fa-eur" aria-hidden="true"></i><%= training.price %> </p></i>
+          </div>
           <%= link_to "Book", training_path(training), class: "buy-button" %>
         </div>
       </div>

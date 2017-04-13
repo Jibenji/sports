@@ -20,19 +20,19 @@
 #filter-button {
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  line-height: 22px;
   margin-left: 10px;
-  border-radius: 2px;
-  background-color: #3066BE;
+  border-radius: 1px;
+  background-color: $soplex-blue;
   color: white;
   font-size: 16px;
   font-weight: bold;
   border: none;
 
   &:hover {
-    color: white;
-    border-color: 1px solid white;
+    color: $soplex-blue;
+    border: 1px solid $soplex-blue;
+    background-color: white;
   }
 }
 
@@ -70,6 +70,20 @@
 
 .search-training-session {
   padding-bottom: 38px;
+  #search_query_sport, #search_query_date, .input-group-btn button  {
+    height: 42px;
+    box-shadow: none;
+    border-radius: none;
+    border: 1px solid black;
+  }
+  #search_query_sport {
+    margin-right: 3px;
+    -webkit-appearance: none;
+    color: black;
+  }
+  #search_query_date input {
+    color: black;
+  }
 }
 
 .result-cards-container{

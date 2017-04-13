@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     current_user.profile
   end
 
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
+
 end

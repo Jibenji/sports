@@ -46,7 +46,7 @@
     position: absolute;
     bottom: 20px;
     left: 23%;
-    color: $light-gray;
+    color: lightgrey;
     &:hover {
 color: black;
 transition: all 200ms ease;
@@ -59,25 +59,29 @@ transition: all 200ms ease;
   border-radius: 1px;
   line-height: 40px;
   font-weight: bold;
-  border-radius: 1px;
-  background-color: $soplex-blue;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-left: 10px;
+  border-radius: 2px;
+  background-color: #3066BE;
   color: white;
   font-size: 14px;
   border: none;
   transition: 200ms all ease;
-  border: 1px solid $soplex-blue;
+  border: 1px solid #3066BE;
   font-size: 16px;
   letter-spacing: 0.3px;
 &:hover {
   text-decoration: none;
-  color: $soplex-blue;
+  color: #3066BE;
   background: white;
   background-color: white;
-  border: 1px solid $soplex-blue;
+  border: 1px solid #3066BE;
 
 }
 }
-
 
 
 .search-field-banner{
@@ -91,12 +95,6 @@ transition: all 200ms ease;
     margin-right: 3px;
     -webkit-appearance: none;
     color: black;
-
-
-  }
-  #search_query_date input {
-    color: black;
-
   }
 }
 
