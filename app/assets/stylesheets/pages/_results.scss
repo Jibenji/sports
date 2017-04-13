@@ -23,7 +23,7 @@
   padding-top: 6px;
   padding-bottom: 6px;
   margin-left: 10px;
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: #3066BE;
   color: white;
   font-size: 16px;
@@ -46,9 +46,15 @@
   overflow-y: scroll;
 
 }
+
 .map-box{
-  margin-right: -15px;
+  // margin-right: -15px;
   padding-left: 30px;
+  position: fixed;
+  top: 92px;
+  bottom: 0;
+  right: 0;
+  left: 50%;
 
 }
 
@@ -58,7 +64,7 @@
 }
 
 #map {
-  height: 80vh;
+  height: 100%;
 }
 
 
@@ -71,4 +77,16 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+}
+
+h5 {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.toright {
+  padding-left: 6px;
+  font-size: 14px;
+  line-height: 12px;
+  padding-top: 20px;
 }
