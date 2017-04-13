@@ -11,10 +11,11 @@
           _.each(<%=raw @hash.to_json %>, function(json, index){
           json.marker = markers[index];
           $(".result-card-" + json.id).on('mouseover', function(e) {
-            console.log(e)
+
             handler.getMap().setZoom(14);
-            json.marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+            json.marker.setMap(handler.getMap());
             json.marker.panTo();
+            console.log(json.marker)
             google.maps.event.trigger(json.marker.getServiceObject(), 'click');
           });
           });
