@@ -21,27 +21,21 @@
   padding: 6px 58px;
   border-radius: 1px;
   line-height: 40px;
-  background-color: #3066BE;
+  background-color: $soplex-blue;
   color: white;
   font-size: 14px;
   border: none;
+  border: 1px solid $soplex-blue;
+  transition: 200ms all ease;
 &:hover {
   text-decoration: none;
-  color: #3066BE;
-  background: #AED4E6;
-  border: none;
+  color: $soplex-blue;
+  background: white;
+  border: 1px solid $soplex-blue;
 }
 }
 
-.yellow-button {
-  padding: 20px;
-  border-radius: 1px;
-  line-height: 40px;
-  background-color: #FAF33E;
-  color: black;
-  font-size: 14px;
-  border: 1px solid black;
-}
+
 
 
 .fb-button {
@@ -77,32 +71,38 @@
 .buy-button{
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 2px;
+  border-radius: 1px;
   line-height: 40px;
-  background-color: #3066BE;
+  background-color: $soplex-blue;
   color: white;
   font-size: 16px;
   position: absolute;
   top: 65%;
   right: 1.0em;
   font-weight: bold;
+  border: 1px solid $soplex-blue;
+  transition: 200ms all ease;
+  &:hover {
+    color: $soplex-blue;
+    border: 1px solid $soplex-blue;
+    background-color: white;
+  }
 }
 
 .book-button{
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 2px;
+  border-radius: 1px;
   line-height: 40px;
-  background-color: #3066BE;
+  background-color: $soplex-blue;
   color: white;
   font-size: 16px;
   position: absolute;
   right: 1.0em;
   font-weight: bold;
-
-  &:hover {
-  color: white;
-  border-color: 1px solid white;
-
+ &:hover {
+    color: $soplex-blue;
+    border: 1px solid $soplex-blue;
+    background-color: white;
 }
 }

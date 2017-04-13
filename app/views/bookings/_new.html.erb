@@ -5,9 +5,9 @@
 </h4>
 <div class="form-container">
 
-<div class="form-inline">
+<div class="form-inline booking-form">
       <%= simple_form_for [session, @booking] do |f| %>
-      <%= f.input :participants, collection: 1..session.available_spots, prompt: "Select number of participants", label: false %>
+      <%= f.input :participants, collection: 1..session.available_spots, prompt: "Select number of participants ▼", label: false %>
       <%= f.button :submit, "Submit", class: "blue-button", id: "submit-booking" %>
       <% end %>
   </div>
