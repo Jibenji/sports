@@ -5,11 +5,11 @@
 <div class="booking-container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-    <div class="no-training text-center">
-      <p>You haven't tried a training yet!</p>
+      <div class="no-training text-center">
+        <p>You haven't tried a training yet!</p>
       </div>
       <div class= "text-center">
-      <%= link_to "Find a training", trainings_all_path, class: "navbar-wagon-button btn" %>
+        <%= link_to "Find a training", trainings_all_path, class: "navbar-wagon-button btn" %>
       </div>
     </div>
   </div>
@@ -17,20 +17,21 @@
 
 <% else %>
 <section class="container card-group">
-  <div class="row">
-   <% @bookings.each do |booking| %>
-   <div class="col-sm-4">
-    <div class="card">
-      <div class="card-block">
-        <%= booking.session.training.title %>
-        <%= booking.session.training.date %>
-        <%= booking.session.training.duration %>
-        <%= link_to "review this booking" ,new_booking_review_path(booking) %>
-      </div>
-    </div>
+
+ <% @bookings.each do |booking| %>
+
+ <div class="booking-card">
+  <div id="review-card-description">
+    <h2>Your Training:  <%= booking.session.training.title %> </h2>
+    <h3>Address: <%= booking.session.training.address %></h3>
+    <h3> On: <%= booking.session.date.strftime("%a, %e %b %Y") %></h3>
+    <h3> At: <%= booking.session.time.strftime("%H:%M") %></h3>
+    <%= link_to "review this booking" ,new_booking_review_path(booking), class: "blue-button", id: "review-button" %>
+  </div>
+  <div id="review-card-photo">
+    <img src="<%= cl_image_path booking.session.training.profile.trainer.banner_picture, crop: :fill, height: 300, width: 400 %>" >
   </div>
 </div>
-
 <% end %>
 </section>
 <% end %>

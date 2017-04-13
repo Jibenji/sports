@@ -22,9 +22,6 @@
   text-align: center;
   padding: 20px 0px;
   border-bottom: 1px solid $light-gray;
-
-
-
   &:hover {
     color: #8d8d8d;
   }
@@ -33,10 +30,9 @@
 .tab.active {
 font-weight: 600;
 letter-spacing: 0.5px;
-  background: white;
-  color: black;
-
-   border-bottom: 1.5px solid black;
+background: white;
+color: black;
+border-bottom: 1.5px solid black;
 
 }
 
@@ -52,11 +48,11 @@ letter-spacing: 0.5px;
     cursor: pointer;
   }
 
-  &:active {
+  &.active {
     position: relative;
     top: 1px;
-    border: none;
     background: none;
+
   }
 
   .tab-name {
@@ -67,5 +63,9 @@ letter-spacing: 0.5px;
     font-size: 1.5em;
     text-shadow: 0px 0px 8px rgba(100, 100, 100, 1);
   }
+}
+
+#tab-sport.active {
+  border: none;
 }
 

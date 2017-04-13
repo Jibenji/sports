@@ -20,7 +20,8 @@
   <div class="row">
     <div class="col-md-1"></div>
     <% @sports.each do |sport| %>
-    <div class="tab tab-sport col-md-2 text-center" data-target=".<%=sport.name %>-tab">
+
+    <div id="tab-sport" class="tab-sport tab col-md-2 text-center" data-target=".<%=sport.name %>-tab">
       <div class = "relative" >
         <%= image_tag "sports/#{sport.name.downcase}.jpeg", class: "tab-pictures"  %>
       </div>
@@ -45,8 +46,8 @@
 
             <h3><%=training.title%></h3>
             <div class="flex-right">
-           <p><i class="fa fa-calendar-o" aria-hidden="true"></i> <%=training.sessions.first.date %></p>
-           <p><%= training.sessions.first.time.strftime("at %I:%M%p")%></p>
+           <p><i class="fa fa-calendar-o" aria-hidden="true"></i> <%=training.sessions.first.date.strftime("%a, %e %b %Y") %></p>
+           <p><%= training.sessions.first.time.strftime("at %H:%M")%></p>
            <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%=training.duration %> minutes </p>
             </div>
             </div>
