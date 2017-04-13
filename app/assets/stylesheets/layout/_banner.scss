@@ -78,7 +78,9 @@ transition: all 200ms ease;
 }
 }
 
-
+.input-date{
+  color: black;
+}
 
 .search-field-banner{
   #search_query_sport, #search_query_date, .input-group-btn button  {
@@ -91,12 +93,6 @@ transition: all 200ms ease;
     margin-right: 3px;
     -webkit-appearance: none;
     color: black;
-
-
-  }
-  #search_query_date input {
-    color: black;
-
   }
 }
 
@@ -150,4 +146,9 @@ transition: all 200ms ease;
   padding-bottom: 20px;
 }
 
+
+.form-control::-webkit-input-placeholder { color: black; }
+.form-control:-moz-placeholder { color: black; }
+.form-control::-moz-placeholder { color: black; }
+.form-control:-ms-input-placeholder { color: black; }
 
