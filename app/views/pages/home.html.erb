@@ -52,8 +52,7 @@
             </div>
             <h4>Description: <%=training.description %></h4>
             <p><i class="fa fa-map-marker" aria-hidden="true"></i> <%=training.address %></p>
-            <p><i class="fa fa-user" aria-hidden="true"></i> <%= training.group_capacity %> people participating</p>
-            <p><i class="fa fa-eur" aria-hidden="true"></i><%= training.price %> </p></i>
+            <p><i class="fa fa-eur" aria-hidden="true"></i><%= training.price %>,- </p></i>
           </div>
           <%= link_to "Book", training_path(training), class: "buy-button" %>
         </div>
