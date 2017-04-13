@@ -10,6 +10,7 @@
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   h1 {
     margin: 0;
   }
@@ -29,8 +30,9 @@
   flex: 0 0 100%;
 
 }
-.training-tabs a {
-  color: black;
+.training-tab p {
+  color: $light-gray;
+  font-size: 18px;
 }
 .training-tabs a:hover {
   cursor: pointer;
@@ -45,7 +47,7 @@
 }
 
 .training-all-details {
-padding: 50px 0 0 30px;
+padding: 50px 0 150px 30px;
   display: flex;
   flex-direction: column;
   flex: 0 0 60%;
@@ -63,19 +65,19 @@ padding: 50px 0 0 30px;
   flex: 0 0 25%;
   text-align: center;
   padding: 10px 0px;
-
-  border: 1px solid black;
+  border-bottom: 1px solid $light-gray;
 
   &:hover {
-    color: #8d8d8d;
-    border: 1px solid #8d8d8d;
+    color: $light-gray;
+    border-bottom: 1px solid #8d8d8d;
   }
 }
 
 .training-tab.active {
-  background: black;
-  color: white;
-   border: 1px solid black;
+  font-weight: 500;
+  background: white;
+  color: black;
+  border-bottom: 2px solid black;
 }
 
 .training-booking {
@@ -83,7 +85,8 @@ padding: 50px 0 0 30px;
   margin-top: 137px;
   padding: 50px 50px 70px 50px;
   flex: 0 0 280px;
-  border: 1px solid #8d8d8d;
+  border: 1px solid $light-gray;
+  margin-bottom: 100px;
 }
 
 #map-training {
@@ -94,8 +97,16 @@ padding: 50px 0 0 30px;
 }
 
 
+.training-overview {
+  padding: 40px;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+}
 
-
+.training-overview-container{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 

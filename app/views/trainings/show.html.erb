@@ -1,7 +1,6 @@
 
 <div class="training-banner">
-  <div class="training-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @training.profile.trainer.banner_picture, height: 300, width: 400,crop: :fill %>')">
-    <h1><%= @training.title %></h1>
+  <div class="training-banner" style="background-image: url('<%= cl_image_path @training.profile.trainer.banner_picture %>')">
   </div>
 </div>
 
@@ -11,7 +10,7 @@
 
 <div class="training-booking">
   <div class="sessions">
-    <p>Training's sessions for <%= @training.duration %> H</p>
+    <h4>Training's sessions: </h4>
   <% previous = @sessions.first %>
   <% @sessions.each do |session| %>
 
@@ -19,20 +18,28 @@
     <h4>
       <%= session.date.strftime("%a, %e %b %Y") %>
     </h4>
-    <p>Select a time:</p>
+    <br>
+    <h4>Select a time:</h4>
+    <br>
   <% end %>
 
-  <div>
-
-    <%= link_to "#{session.time.strftime("at %H:%M")}", participants_path(session_id: session), class: "blue-button" %>
-  </div>
+<%= link_to "#{session.time.strftime("at %H:%M")}", "#", data: { toggle: "modal", target: "#myConfirmModal#{session.id}" },class: "blue-button" %>
 
     <% previous = session %>
+ <%= render partial: 'shared/confirm', locals: { session: session } %>
   <% end %>
 
   </div>
 </div>
 </div>
+
+<style>
+  .footer{
+    display: none;
+  }
+</style>
+
+
 
 <!-- action=url method=post/get/patch
 forms bunch of input

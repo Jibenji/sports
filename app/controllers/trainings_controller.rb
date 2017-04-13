@@ -12,6 +12,7 @@ class TrainingsController < ApplicationController
       marker.lat @training.latitude
       marker.lng @training.longitude
     end
+    @booking = Booking.new
   end
 
   def new

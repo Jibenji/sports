@@ -1,30 +1,24 @@
 .profile-container {
   min-height: 400px;
-  padding: 0 100px;
-  margin-top: -70px;
+  padding: 50px 25px 0 25px;
+
   padding-bottom: 20px;
 }
 
-.profile-container-xs {
-
-}
 
 .profile-photo-xs {
   height: 30vh;
     background-repeat: no-repeat;
   background-size: cover;
 }
-.profile-photo {
-  background-repeat: no-repeat;
-  height: 500px;
+#profile-photo-trainer {
   margin-top: 70px;
+  margin-left: 65px;
  }
 
 .profile-text {
-  padding: 30px 50px;
-  margin: 0 70px 0 40px ;
+  padding: 60px 50px;
   background-color: #FAF33E;
-  min-height: 500px;
 }
 
 .profile-text-xs{

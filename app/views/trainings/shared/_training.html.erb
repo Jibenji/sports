@@ -1,4 +1,14 @@
-<h1><%= @training.title %></h1>
-<p>Price: <%= @training.price %>€</p>
-<p>Duration: <%= @training.duration %></p>
-<p>Group capacity: <%= @training.group_capacity %></p>
+<div class="training-overview">
+  <div class="training-overview-container">
+    <div class="training-description">
+      <h1><%= @training.title %></h1>
+      <h3>Price: <%= @training.price %>€</h3>
+      <h3>Duration: <%= @training.duration %>minutes.</h3>
+      <h3>Group capacity: <%= @training.group_capacity %></h3>
+      <h4><%= @training.description %></h4>
+    </div>
+    <div class="training-avatar">
+    <img src="<%= cl_image_path @training.profile.avatar_picture %>" class="avatar-xl">
+    </div>
+  </div>
+</div>
