@@ -1,14 +1,18 @@
 <div class="training-overview">
   <div class="training-overview-container">
-    <div class="training-description">
-      <h1><%= @training.title %></h1>
-      <h3>Price: <%= @training.price %>€</h3>
-      <h3>Duration: <%= @training.duration %>minutes.</h3>
-      <h3>Group capacity: <%= @training.group_capacity %></h3>
-      <h4><%= @training.description %></h4>
-    </div>
-    <div class="training-avatar">
-    <img src="<%= cl_image_path @training.profile.avatar_picture %>" class="avatar-xl">
+    <div class="title-card">
+      <h3><strong><%= @training.description %></strong></h1>
+        <h5><i class="fa fa-map-marker" aria-hidden="true"></i> <%=@training.address %></h5>
+          <h5><i class="fa fa-eur" aria-hidden="true"></i> <%= @training.price %></h5>
+          <h5><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @training.duration %> minutes.</h5>
+          <h5><i class="fa fa-user" aria-hidden="true"></i> Group size: <%= @training.group_capacity %></h5>
+      </div>
+      <div class="training-avatar">
+        <img src="<%= cl_image_path @training.profile.avatar_picture, crop: :fill, height: 150, width: 150 %>" class="avatar-xl">
+      </div>
     </div>
   </div>
-</div>
+      <div>
+        <h4><strong>About</strong></h4>
+        <p><%=@training.profile.trainer.bio%></p>
+      </div>
