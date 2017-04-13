@@ -42,8 +42,7 @@
       <div class="card-training relative">
         <div class="card-training-description">
           <div class="title-card">
-                      <div class="flex-around">
-
+            <div class="flex-around">
             <h3><%=training.title%></h3>
             <div class="flex-right">
            <p><i class="fa fa-calendar-o" aria-hidden="true"></i> <%=training.sessions.first.date.strftime("%a, %e %b %Y") %></p>
@@ -53,9 +52,9 @@
             </div>
             <h4>Description: <%=training.description %></h4>
             <p><i class="fa fa-map-marker" aria-hidden="true"></i> <%=training.address %></p>
-            <p><i class="fa fa-eur" aria-hidden="true"></i><%= training.price %>,- </p></i>
+            <p><i class="fa fa-eur" aria-hidden="true"></i><%=training.price %>,- </p></i>
           </div>
-          <%= link_to "Book", training_path(training), class: "buy-button" %>
+          <%= link_to "Details", training_path(training), class: "buy-button" %>
         </div>
       </div>
       <% end %>
