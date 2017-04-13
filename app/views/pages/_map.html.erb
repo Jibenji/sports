@@ -8,15 +8,27 @@
 
           markers = handler.addMarkers(<%=raw @hash.to_json %>);
 
+
+
           _.each(<%=raw @hash.to_json %>, function(json, index){
           json.marker = markers[index];
-          $(".result-card-" + json.id).on('mouseover', function(e) {
+          json.marker.serviceObject.icon = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+          $(".result-card-" + json.id).on('mouseenter', function(e) {
 
             handler.getMap().setZoom(14);
             json.marker.setMap(handler.getMap());
             json.marker.panTo();
-            console.log(json.marker)
             google.maps.event.trigger(json.marker.getServiceObject(), 'click');
+            json.marker.serviceObject.icon = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+          });
+
+          $(".result-card-" + json.id).on('mouseleave', function(e) {
+
+            handler.getMap().setZoom(14);
+            json.marker.setMap(handler.getMap());
+            json.marker.panTo();
+            google.maps.event.trigger(json.marker.getServiceObject(), 'click');
+            json.marker.serviceObject.icon = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
           });
           });
           handler.bounds.extendWith(markers);
