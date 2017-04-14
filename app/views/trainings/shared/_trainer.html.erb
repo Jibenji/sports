@@ -1,21 +1,18 @@
-<!-- <h1><%= @training.profile.first_name %> <%= @training.profile.last_name %></h1>
-<p><%= @training.profile.trainer.bio %></p>
-
--->
-
-
-<div class="training-overview">
+<div class="position-trainer-overview">
+<div class="training-overview overview-padding" ">
   <div class="training-overview-container">
     <div class="title-card">
       <h3><strong><%= @training.description %></strong></h1>
-      <h5>name: <%= @training.profile.first_name + " " + @training.profile.last_name %></h5>
-      </div>
-      <div class="training-avatar">
+        <p>By: <%= @training.profile.first_name + " " + @training.profile.last_name %></p>
+    </div>
+    <div class="training-avatar">
         <img src="<%= cl_image_path @training.profile.avatar_picture, crop: :fill, height: 150, width: 150 %>" class="avatar-xl">
-      </div>
     </div>
   </div>
-      <div>
-        <h4><strong>About</strong></h4>
-        <p><%=@training.profile.trainer.bio%></p>
-      </div>
+</div>
+
+  <div>
+    <h4><strong>About</strong></h4>
+    <p><%=@training.profile.trainer.bio%></p>
+  </div>
+</div>
