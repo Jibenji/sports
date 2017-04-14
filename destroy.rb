@@ -1,0 +1,10 @@
+# Booking.delete_all
+# Message.delete_all
+# Request.delete_all
+# Review.delete_all
+# Session.delete_all
+# Training.delete_all
+# Sport.delete_all
+# Profile.delete_all
+# Trainer.delete_all
+# User.delete_all
