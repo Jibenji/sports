@@ -23,7 +23,7 @@
 
     <div id="tab-sport" class="tab-sport tab col-md-2 text-center" data-target=".<%=sport.name %>-tab">
       <div class = "relative" >
-        <%= image_tag "sports/#{sport.name.downcase}.jpeg", class: "tab-pictures"  %>
+        <%= cl_image_tag(sport.banner_sport_picture, class: "tab-pictures") %>
       </div>
       <div class="tab-name">
         <%= sport.name %>
@@ -35,32 +35,48 @@
 
 <div class="overview-container">
   <% @sports.each_with_index do |sport, i| %>
-  <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
-    <div class="col-sm-6">
-      <% sport.trainings.each do |training|  %>
-
-      <div class="card-training relative">
-        <div class="card-training-description">
-          <div class="title-card">
-            <div class="flex-around">
-            <h3><%=training.title%></h3>
-            <div class="flex-right">
-           <p><i class="fa fa-calendar-o" aria-hidden="true"></i> <%=training.sessions.first.date.strftime("%a, %e %b %Y") %></p>
-           <p><%= training.sessions.first.time.strftime("at %H:%M")%></p>
-           <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%=training.duration %> minutes </p>
-            </div>
-            </div>
-            <h4>Description: <%=training.description %></h4>
-            <p><i class="fa fa-map-marker" aria-hidden="true"></i> <%=training.address %></p>
-            <p><i class="fa fa-eur" aria-hidden="true"></i><%=training.price %>,- </p></i>
+    <div class="<%= sport.name %>-tab tab-content <%= 'hidden' if i >= 1 %>">
+      <div class="col-sm-6">
+        <% sport.trainings.each do |training|  %>
+          <div class="card-training relative">
+            <div class="card-training-description">
+              <div class="title-card">
+                <div class="flex-around">
+                  <h3>
+                    <%=training.title%>
+                  </h3>
+                  <p>
+                  <div class="timing">
+                  <i class="fa fa-calendar-o" aria-hidden="true"></i> <%=training.sessions.first.date.strftime("%a, %e %b %Y") %>
+                  </p>
+                  <p>
+                    <%= training.sessions.first.time.strftime("at %H:%M")%>
+                  </p>
+                  <p>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> <%=training.duration %> minutes
+                  </p>
+                  </div>
+                </div>
+                <div class="flex-right">
+                  <h4>
+                    Description: <%=training.description %>
+                  </h4>
+                  <p>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> <%=training.address %>
+                  </p>
+                  <p>
+                    <i class="fa fa-eur" aria-hidden="true"></i><%=training.price %>,-
+                  </p>
+                </div>
+              </div>
+            <div>
+            <%= link_to "Details", training_path(training), class: "buy-button" %>
           </div>
-          <%= link_to "Details", training_path(training), class: "buy-button" %>
         </div>
       </div>
-      <% end %>
-    </div>
-
-    <div class="col-sm-5 quote">
+    <% end %>
+  </div>
+  <div class="col-sm-5 quote">
       <% if sport.name == "Yoga" %>
       "A photographer gets people to pose for him. A yoga instructor gets people to pose for themselves."
       <br><h3>T. Guillemets</h3>
@@ -85,8 +101,8 @@
       “I hated every minute of training, but I said, ‘Don’t quit. Suffer now and live the rest of your life as a champion.”
       <br><h3>Muhammad Ali</h3>
       <% end %>
-    </div>
   </div>
+</div>
   <% end %>
 </div>
 
