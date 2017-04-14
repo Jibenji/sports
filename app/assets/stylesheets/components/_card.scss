@@ -133,7 +133,6 @@
 }
 
 .card-training {
-  width: 600px;
   border-radius: 3px;
   color: black;
   margin-bottom: 20px;
@@ -168,13 +167,20 @@
   }
 }
 
+.timing {
+  display: flex;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
 .flex-around {
   justify-content: space-between;
   display: flex;
+  align-items: baseline;
 }
 
 .flex-right {
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
   padding-top: 27px;
   padding-right: 17px;
