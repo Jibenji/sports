@@ -1,1 +1,29 @@
-<h1>Reviews</h1>
+<div class="position-trainer-overview">
+<div class="training-overview overview-padding" ">
+  <div class="training-overview-container">
+    <div class="title-card">
+      <h3><strong>Reviews:</strong></h1>
+        <p>For: <%= @training.profile.first_name + " " + @training.profile.last_name %></p>
+    </div>
+    <div class="training-avatar">
+        <img src="<%= cl_image_path @training.profile.avatar_picture, crop: :fill, height: 150, width: 150 %>" class="avatar-xl">
+    </div>
+  </div>
+</div>
+
+<div class="training-review">
+  <h4><strong>Great, relaxing yoga class!</strong></h4>
+    <p class="review-stars">★★★★★</p>
+    <p>The best yoga class in town! Amazing, positive, experienced instructor, perfect for all levels of yoga. I would definitely recommend this class to anyone.</p>
+  </div>
+  <div class="training-review">
+  <h4><strong>Perfect start of the day!</strong></h4>
+    <p class="review-stars">★★★★</p>
+    <p>I highly recommend taking a class with <%= @training.profile.first_name %>, she's an exceptional instructor because her classes are personalized and tailored to your needs. She takes the time to learns every student's name, asks everyone what specific poses they're interested in doing and gently pushes students to learn new things.</p>
+  </div>
+  <div class="training-review" id="last-review-margin">
+  <h4><strong>Best yoga teacher I've ever seen!</strong></h4>
+    <p class="review-stars">★★★★★</p>
+    <p>Very skilled and helpfull yoga teacher. <%= @training.profile.first_name %> takes the time to explain eveything and makes sure you do all poses correctly. </p>
+  </div>
+</div>

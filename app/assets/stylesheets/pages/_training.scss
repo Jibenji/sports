@@ -105,8 +105,23 @@ padding: 50px 0 150px 30px;
   justify-content: space-between;
 }
 
-.flex-padding{
+.position-trainer-overview{
+  padding: 16px 12px 20px 36px;
 }
 
+.overview-padding{
+  padding-bottom: 27px;
+}
 
+.review-stars{
+color: $soplex-blue;
+}
 
+.training-review{
+  padding-bottom: 10px;
+  border-bottom: 1px solid $light-gray;
+}
+
+#last-review-margin{
+  margin-bottom: 100px;
+}
