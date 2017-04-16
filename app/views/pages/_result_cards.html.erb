@@ -5,13 +5,11 @@
   <%#= f.input :time, as: :time_picker, placeholder: "Time", label: false  %>
   <%= f.button :submit, "Search", class: "black-white-button", id: "filter-button" %>
   <% end %>
-
 </div>
 
 <% if @trainings %>
   <% @trainings.each do |training| %>
   <%= render partial: 'training_card', locals: { training: training } %>
   <% end %>
-
 <% end %>
 
