@@ -1,37 +1,38 @@
 <%= render 'layouts/banner' %>
 
 
-<section class="story-container">
+<section class="story-container hidden-xs">
   <div class="row">
-    <div class="col-xs-12 col-md-4">
+    <div class="col-sm-4">
       <h3><span class="fa fa-heartbeat"></span><br>Your favorite sports<p>We offer different sports.<br>Pick a sport you like.</p></h3>
     </div>
-    <div class="col-xs-12 col-md-4">
+    <div class="col-sm-4">
       <h3><span class="fa fa-check-square-o"></span><br>Quality trainings<p>Choose between different<br>trainings in your neighbourhood.</p></h3>
     </div>
-    <div class="col-xs-12 col-md-4">
+    <div class="col-sm-4">
       <h3><span class="fa fa-credit-card"></span><br>Save and easy<p>Confirm your booking and<br>pay safely online.</p></h3>
     </div>
   </div>
 </section>
 
 
-<div class="tab-container">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <% @sports.each do |sport| %>
 
-    <div id="tab-sport" class="tab-sport tab col-md-2 text-center" data-target=".<%=sport.name %>-tab">
-      <div class = "relative" >
-        <%= cl_image_tag(sport.banner_sport_picture, class: "tab-pictures") %>
-      </div>
-      <div class="tab-name">
-        <%= sport.name %>
-      </div>
+<div class="tab-container ">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-1">
+        <% @sports.each do |sport| %>
+        <div  class="tab-sport tab col-md-2 text-center" data-target=".<%=sport.name %>-tab">
+          <div class = "relative tab-pictures" style="background-image: url('<%= cl_image_path sport.banner_sport_picture %>')">
+            <div class="tab-name">
+              <%= sport.name %>
+            </div>
+          </div>
+        </div>
+        <% end %>
     </div>
-    <% end %>
   </div>
 </div>
+
 
 <div class="overview-container">
   <% @sports.each_with_index do |sport, i| %>
