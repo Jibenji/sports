@@ -38,9 +38,7 @@
   margin-top: 50px;
 }
 
-#padding-large-search{
-  padding-left: 8vh;
-}
+
 
 .btn-down {
     position: absolute;
@@ -120,13 +118,24 @@ transition: all 200ms ease;
       width: 245px;
     }
   }
-    #search_query_sport {
+  #search_query_sport {
     width:245px;
     margin-bottom: 10px;
+  }
+  .searchs-button {
+    width: 245px;
+  }
+  .form-group {
+    margin: 0;
+  }
+  .banner-title {
+    h1{
+      font-size: 60px;
     }
-    .searchs-button {
-      width: 245px;
+    h3 {
+      font-size: 30px;
     }
+  }
 }
 
 .xs-button-search {
@@ -141,7 +150,6 @@ transition: all 200ms ease;
 }
 
 .banner-title-xs{
-  padding: 10px 0;
   h1 {
     font-size: 40px;
   }

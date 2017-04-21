@@ -14,7 +14,7 @@
      <div class="btn-down fa fa-chevron-down fa-3x" aria-hidden="true" onclick="">
      </div>
 
-     <div class="form-inline search-field-banner" id="padding-large-search">
+     <div class="form-inline search-field-banner text-center">
       <%= simple_form_for :search_query, url: results_path, method: :get do |f| %>
       <div class="form-inputs">
         <%= f.input :sport, autofocus: true, collection: @sports_selection, prompt: "Pick a sport  ▾", label: false %>
@@ -24,7 +24,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="banner-photo" style="background-image: url(<%= image_url 'woman-running-park-sunset1.jpg'%>);">
   </div>
 </div>
