@@ -86,12 +86,17 @@ transition: all 200ms ease;
     box-shadow: none;
     border-radius: none;
     border: 1px solid black;
+    z-index: -100;
   }
   #search_query_sport {
     margin-right: 3px;
     -webkit-appearance: none;
     color: black;
   }
+}
+
+.input-group-btn:last-child > .btn {
+  z-index: -100;
 }
 
 .xs-banner{
@@ -133,7 +138,7 @@ transition: all 200ms ease;
       font-size: 60px;
     }
     h3 {
-      font-size: 30px;
+      font-size: 26px;
     }
   }
 }
