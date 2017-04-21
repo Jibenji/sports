@@ -110,7 +110,7 @@ transition: all 200ms ease;
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
   .form-inputs {
     display: flex;
     justify-content: center;
@@ -120,7 +120,13 @@ transition: all 200ms ease;
       width: 245px;
     }
   }
-
+    #search_query_sport {
+    width:245px;
+    margin-bottom: 10px;
+    }
+    .searchs-button {
+      width: 245px;
+    }
 }
 
 .xs-button-search {

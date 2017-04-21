@@ -85,9 +85,12 @@
   border: 1px solid #8d8d8d;
 }
 
-.overview-container{
-  margin-left: 98px;
+
+@display (min-width: 700px){
+  .overview-container {
+    margin-left: 98px;
   height: 400px;
+  }
 }
 
 
