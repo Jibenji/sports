@@ -30,6 +30,12 @@
   }
 }
 
+@media (max-width: 700px) {
+    .story-container {
+      margin-top: 50px;
+    }
+  }
+
 .discover {
   font-family: raleway;
   font-size: 18px;
@@ -62,7 +68,15 @@
   width: 100%;
   height: auto;
   border-radius: 1px;
+  background-size: cover;
   // height: 200px !important;
+}
+
+@media (max-width: 700px){
+  .tab-container {
+    margin-top: 30px;
+
+  }
 }
 
 .tab-image.active {
@@ -71,9 +85,12 @@
   border: 1px solid #8d8d8d;
 }
 
-.overview-container{
-  margin-left: 98px;
+
+@display (min-width: 700px){
+  .overview-container {
+    margin-left: 98px;
   height: 400px;
+  }
 }
 
 

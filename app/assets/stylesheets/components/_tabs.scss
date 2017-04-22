@@ -33,7 +33,6 @@ letter-spacing: 0.5px;
 background: white;
 color: black;
 border-bottom: 1.5px solid black;
-
 }
 
 
@@ -49,6 +48,7 @@ border-bottom: 1.5px solid black;
   }
 
   &.active {
+    border: none;
     position: relative;
     top: 1px;
     background: none;
@@ -56,14 +56,33 @@ border-bottom: 1.5px solid black;
   }
 
   .tab-name {
-    position: relative;
-    top: -220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #ffffff;
     font-weight: bold;
     font-size: 1.5em;
     text-shadow: 0px 0px 8px rgba(100, 100, 100, 1);
   }
 }
+
+  @media (min-width: 700px){
+    .tab-name {
+      height: 350px;
+    }
+  }
+
+  @media (max-width: 700px){
+ .tab-name{
+  height: 150px;
+  background-size: cover;
+  background-position: center top;
+  overflow: hidden;
+ }
+}
+
+
+
 
 #tab-sport.active {
   border: none;

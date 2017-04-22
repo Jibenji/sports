@@ -15,27 +15,27 @@ profile.save!
 
 #sports
 yoga = Sport.create(name: "Yoga", tagline: "Boring sheet", description: "You need to be flexible man...")
-url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
+url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1492159946/zikgjrm3ziyo1gkyd95t.jpg"
 yoga.remote_banner_sport_picture_url = url
 yoga.save!
 
 bootcamp = Sport.create(name: "Bootcamp", tagline: "Bounce the ball", description: "We love Maria")
-url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
+url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1492160219/pn84xnedwucifwl6g1oc.jpg"
 bootcamp.remote_banner_sport_picture_url = url
 bootcamp.save!
 
 boxing = Sport.create(name: "Boxing", tagline: "Have a punch", description: "You really need to like bruises")
-url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
+url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1492160769/dgzctkvvpsqwgybnkiyg.jpg"
 boxing.remote_banner_sport_picture_url = url
 boxing.save!
 
 running = Sport.create(name: "Running", tagline: "Run forest run !", description: "A bit useless but enjoyeable")
-url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
+url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1492160698/tptotdt5ro0xnx19i2hf.jpg"
 running.remote_banner_sport_picture_url = url
 running.save!
 
 dancing = Sport.create(name: "Dancing", tagline: "Dance baby!", description: "Dance with Jennifer")
-url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1491328960/gfkd0vtljwxhc2dvkq0w.jpg"
+url = "http://res.cloudinary.com/dvhelys1s/image/upload/v1492160826/fokhg5bzhow8dgv9pokj.jpg"
 dancing.remote_banner_sport_picture_url = url
 dancing.save!
 
