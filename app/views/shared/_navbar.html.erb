@@ -2,18 +2,11 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <%= image_tag "logo-soplex.png" %>
-
   <% end %>
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
-
-
     <!-- Profile picture and dropdown -->
     <% if current_profile.trainer_id.nil? %>
     <%= link_to t(".top_call_to_action", default: "Become a trainer?"), new_request_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
@@ -29,29 +22,29 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to edit_profile_path do %>
-             <%= t(".profile", default: "Edit profile") %>
+            <%= t(".profile", default: "Edit profile") %>
             <% end %>
           </li>
           <% if current_profile.trainer_id %>
-           <li>
+          <li>
             <%= link_to trainer_path(current_profile) do %>
-             <%= t(".profile", default: "Show trainer profile") %>
+            <%= t(".profile", default: "Show trainer profile") %>
             <% end %>
           </li>
           <li>
             <%= link_to new_training_path do %>
-              <%= t(".profile", default: "Add a training") %>
+            <%= t(".profile", default: "Add a training") %>
             <% end %>
           </li>
-           <li>
+          <li>
             <%= link_to trainings_path do %>
-             <%= t(".profile", default: "All your trainings") %>
+            <%= t(".profile", default: "All your trainings") %>
             <% end %>
           </li>
-            <% end %>
+          <% end %>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <%= t(".sign_out", default: "Log out") %>
+            <%= t(".sign_out", default: "Log out") %>
             <% end %>
           </li>
         </ul>
@@ -70,29 +63,27 @@
     <%= link_to 'Sign up',  "#", data: { toggle: "modal", target: "#mySignUpModal" },class: "navbar-wagon-item navbar-wagon-button btn" %>
 
     <% end %>
+  </div
 
-
-    </div
-
-    <!-- Dropdown list appearing on mobile only -->
-    <div class="navbar-wagon-item hidden-md hidden-lg">
-      <div class="dropdown">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <% if user_signed_in? %>
-          <% if current_profile.trainer_id %>
-          <li><%= link_to "Profile", edit_profile_path %></li>
-          <li><%= link_to "Trainer profile", edit_trainer_path(current_profile) %></li>
-          <li><%= link_to "Add a training", new_training_path %></li>
-          <li><%= link_to "All your trainings", trainings_path %></li>
-            <% end %>
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <% if user_signed_in? %>
+        <% if current_profile.trainer_id %>
+        <li><%= link_to "Profile", edit_profile_path %></li>
+        <li><%= link_to "Trainer profile", edit_trainer_path(current_profile) %></li>
+        <li><%= link_to "Add a training", new_training_path %></li>
+        <li><%= link_to "All your trainings", trainings_path %></li>
+        <% end %>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
         <li> <%= link_to 'Sign up',  "#", data: { toggle: "modal", target: "#mySignUpModal" } %> </li>
         <li> <%= link_to 'Login',  "#", data: { toggle: "modal", target: "#myLoginModal" } %> </li>
         <% end %>
-        </ul>
-      </div>
+      </ul>
     </div>
   </div>
+</div>
 
