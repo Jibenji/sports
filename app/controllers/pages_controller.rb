@@ -12,6 +12,13 @@ class PagesController < ApplicationController
   def results
     @sessions = Session.where(date: params[:search_query][:date])
 
+    #number of guests filter
+    if params[:search_query][:participants]
+      @sessions = @sessions.select { |session| session.available_spots >= params[:search_query][:participants].to_i }
+    else
+      @sessions
+    end
+
     if params[:search_query][:sport] == "All Sports"
       @sessions = @sessions
     else
@@ -34,6 +41,13 @@ class PagesController < ApplicationController
       marker.lat training.latitude
       marker.lng training.longitude
       marker.json({ :id => training.id })
+    end
+
+    if @hash.empty?
+      @hash.push({
+        lat: 52.3776016,
+        lng: 4.8985407
+      })
     end
  end
 
