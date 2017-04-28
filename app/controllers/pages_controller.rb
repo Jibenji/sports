@@ -10,19 +10,25 @@ class PagesController < ApplicationController
   end
 
   def results
-    @sessions = Session.where(date: params[:search_query][:date])
-
-    #number of guests filter
-    if params[:search_query][:participants]
-      @sessions = @sessions.select { |session| session.available_spots >= params[:search_query][:participants].to_i }
+    # the "today" is the case where the user press next training for a sport when search has no results on this date
+    if params[:search_query][:next] == "true"
+      @sessions = Session.where(['date > ?', params[:search_query][:date]])
+      raise
     else
-      @sessions
+      @sessions = Session.where(date: params[:search_query][:date])
     end
 
     if params[:search_query][:sport] == "All Sports"
       @sessions = @sessions
     else
       @sessions = @sessions.select { |session| session.sport == Sport.find_by_name(params[:search_query][:sport]) }
+    end
+
+    #number of guests filter
+    if params[:search_query][:participants]
+      @sessions = @sessions.select { |session| session.available_spots >= params[:search_query][:participants].to_i }
+    else
+      @sessions
     end
 
     @sessions = @sessions.group_by { |session| session.training_id }
