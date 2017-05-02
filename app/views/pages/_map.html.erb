@@ -1,31 +1,33 @@
 <div class="map-box">
-  <div id="map";">
+  <div id="map">
     <% content_for(:after_js) do %>
       <%= javascript_tag do %>
           $(document).ready(function() {
             handler = Gmaps.build('Google', { markers: { maxRandomDistance: null } });
             handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-
               markers = handler.addMarkers(<%=raw @hash.to_json %>);
               _.each(<%=raw @hash.to_json %>, function(json, index){
               json.marker = markers[index];
-              json.marker.serviceObject.icon = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+              json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218588/logo-marker_vzp2pa.png';
+
+              google.maps.event.addListener(json.marker.getServiceObject(), 'click', function(){
+
+                  var content = "<%=raw @trainings[json.id].title.to_s %>"
+                  var infowindow = new google.maps.InfoWindow({content: content });
+                  infowindow.open( handler.getMap(), json.marker.getServiceObject());
+                });
+
               $(".result-card-" + json.id).on('mouseenter', function(e) {
-
                 handler.getMap().setZoom(14);
                 json.marker.setMap(handler.getMap());
                 json.marker.panTo();
-                google.maps.event.trigger(json.marker.getServiceObject(), 'click');
-                json.marker.serviceObject.icon = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+                json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218368/logo-marker-blue_qb7wwk.png';
               });
-
               $(".result-card-" + json.id).on('mouseleave', function(e) {
-
-                handler.getMap().setZoom(14);
+                               handler.getMap().setZoom(14);
                 json.marker.setMap(handler.getMap());
                 json.marker.panTo();
-                google.maps.event.trigger(json.marker.getServiceObject(), 'click');
-                json.marker.serviceObject.icon = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+                json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218588/logo-marker_vzp2pa.png';
               });
               });
               handler.bounds.extendWith(markers);

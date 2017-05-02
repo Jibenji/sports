@@ -10,12 +10,11 @@ class PagesController < ApplicationController
   end
 
   def results
-    # the "today" is the case where the user press next training for a sport when search has no results on this date
+    # the "next" is the case where the user press next training for a sport when search has no results on this date
     if params[:search_query][:next] == "true"
-      @sessions = Session.where(['date > ?', params[:search_query][:date]])
-      raise
+      @sessions = Session.where("date >= ?", params[:search_query][:date].to_date)
     else
-      @sessions = Session.where(date: params[:search_query][:date])
+      @sessions = Session.where(date: params[:search_query][:date].to_date)
     end
 
     if params[:search_query][:sport] == "All Sports"
@@ -55,7 +54,11 @@ class PagesController < ApplicationController
         lng: 4.8985407
       })
     end
- end
+  end
+
+  def gmaps4rails_infowindow
+    "<h1>Hello</h1>"
+  end
 
   private
 
