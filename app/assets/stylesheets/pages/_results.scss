@@ -20,7 +20,7 @@
 #filter-button {
   padding-left: 20px;
   padding-right: 20px;
-  line-height: 22px;
+  line-height: 20px;
   margin-left: 10px;
   border-radius: 1px;
   background-color: $soplex-blue;
@@ -28,6 +28,7 @@
   font-size: 16px;
   font-weight: bold;
   border: none;
+  border: 1px solid $soplex-blue;
 
   &:hover {
     color: $soplex-blue;

@@ -10,20 +10,20 @@
               json.marker = markers[index];
               json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218588/logo-marker_vzp2pa.png';
 
-
-
               $(".result-card-" + json.id).on('mouseenter', function(e) {
                 handler.getMap().setZoom(14);
                 json.marker.setMap(handler.getMap());
                 json.marker.panTo();
                 json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218368/logo-marker-blue_qb7wwk.png';
               });
+    
               $(".result-card-" + json.id).on('mouseleave', function(e) {
-                               handler.getMap().setZoom(14);
+                handler.getMap().setZoom(14);
                 json.marker.setMap(handler.getMap());
                 json.marker.panTo();
                 json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218588/logo-marker_vzp2pa.png';
               });
+    
               });
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
