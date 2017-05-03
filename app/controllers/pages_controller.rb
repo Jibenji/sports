@@ -10,19 +10,24 @@ class PagesController < ApplicationController
   end
 
   def results
-    @sessions = Session.where(date: params[:search_query][:date])
-
-    #number of guests filter
-    if params[:search_query][:participants]
-      @sessions = @sessions.select { |session| session.available_spots >= params[:search_query][:participants].to_i }
+    # the "next" is the case where the user press next training for a sport when search has no results on this date
+    if params[:search_query][:next] == "true"
+      @sessions = Session.where("date >= ?", params[:search_query][:date].to_date)
     else
-      @sessions
+      @sessions = Session.where(date: params[:search_query][:date].to_date)
     end
 
     if params[:search_query][:sport] == "All Sports"
       @sessions = @sessions
     else
       @sessions = @sessions.select { |session| session.sport == Sport.find_by_name(params[:search_query][:sport]) }
+    end
+
+    #number of guests filter
+    if params[:search_query][:participants]
+      @sessions = @sessions.select { |session| session.available_spots >= params[:search_query][:participants].to_i }
+    else
+      @sessions
     end
 
     @sessions = @sessions.group_by { |session| session.training_id }
@@ -41,6 +46,7 @@ class PagesController < ApplicationController
       marker.lat training.latitude
       marker.lng training.longitude
       marker.json({ :id => training.id })
+      marker.infowindow render_to_string(:partial => "info_window", :locals => { :training => training})
     end
 
     if @hash.empty?
@@ -49,7 +55,11 @@ class PagesController < ApplicationController
         lng: 4.8985407
       })
     end
- end
+  end
+
+  def gmaps4rails_infowindow
+    "<h1>Hello</h1>"
+  end
 
   private
 
