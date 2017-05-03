@@ -46,6 +46,7 @@ class PagesController < ApplicationController
       marker.lat training.latitude
       marker.lng training.longitude
       marker.json({ :id => training.id })
+      marker.infowindow render_to_string(:partial => "info_window", :locals => { :training => training})
     end
 
     if @hash.empty?
