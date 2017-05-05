@@ -3,6 +3,7 @@ class Session < ApplicationRecord
 
   has_one :sport, through: :training
   has_many :bookings
+  has_many :reviews, through: :bookings
 
   def available_spots
     total = 0
