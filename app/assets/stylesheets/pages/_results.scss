@@ -45,18 +45,14 @@
   width:100%;
   position: absolute;
   overflow-y: scroll;
-
 }
 
 .map-box{
-  // margin-right: -15px;
-  padding-left: 30px;
   position: fixed;
   top: 70px;
   bottom: 0;
   right: 0;
-  left: 50%;
-
+  left: 60%;
 }
 
 .resulsts-overview{
@@ -70,7 +66,7 @@
 
 
 .search-training-session {
-  padding-bottom: 38px;
+  padding-bottom: 1.5em;
   #search_query_sport, #search_query_date, .input-group-btn button  {
     height: 42px;
     box-shadow: none;

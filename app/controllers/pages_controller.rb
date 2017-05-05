@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   before_action :load_sports, only: [:home, :results]
 
   def home
-
   end
 
   def trainings
@@ -32,11 +31,16 @@ class PagesController < ApplicationController
 
     @sessions = @sessions.group_by { |session| session.training_id }
 
+    gmaps4rails_marker_hash
+  end
+
+  def gmaps4rails_marker_hash
     #google maps pins
     @trainings_id = []
     @sessions.each do |k,v|
       @trainings_id << k
     end
+
     @trainings = []
     @trainings_id.each do |training_id|
       @trainings << Training.find(training_id)
@@ -55,10 +59,6 @@ class PagesController < ApplicationController
         lng: 4.8985407
       })
     end
-  end
-
-  def gmaps4rails_infowindow
-    "<h1>Hello</h1>"
   end
 
   private

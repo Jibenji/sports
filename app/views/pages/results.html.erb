@@ -1,14 +1,14 @@
 <div class="container-fluid resulsts-overview">
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-7">
       <%= render 'search_query_filters' %>
-    <% if @sessions.empty? %>
-      <%= render 'result_empty_card' %>
-    <% else %>
-      <%= render 'result_cards' %>
-    <% end %>
+      <% if @sessions.empty? %>
+        <%= render 'result_empty_card' %>
+      <% else %>
+        <%= render 'result_cards' %>
+      <% end %>
     </div>
-    <div class="col-xs-6">
+    <div class="col-xs-5">
       <%= render 'map' %>
     </div>
   </div>

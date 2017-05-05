@@ -1,6 +1,6 @@
-<% @trainings.each do |training| %>
-  <%= render partial: 'training_card', locals: { training: training } %>
-<% end %>
-
-
+<div class="container-three-cards">
+  <% @sessions.each do |training_id, sessions| %>
+    <%= render partial: 'training_card', locals: { training: Training.find(training_id), sessions: sessions } %>
+  <% end %>
+</div>
 
