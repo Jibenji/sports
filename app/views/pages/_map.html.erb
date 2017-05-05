@@ -2,9 +2,54 @@
   <div id="map">
     <% content_for(:after_js) do %>
       <%= javascript_tag do %>
+          styles =
+[
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 100
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "##3066BE"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#aee8bd"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#f9f9f9"
+            }
+        ]
+    }
+]
           $(document).ready(function() {
             handler = Gmaps.build('Google', { markers: { maxRandomDistance: null } });
-            handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+            handler.buildMap({ provider: { styles: styles}, internal: {id: 'map'}}, function(){
               markers = handler.addMarkers(<%=raw @hash.to_json %>);
               _.each(<%=raw @hash.to_json %>, function(json, index){
               json.marker = markers[index];
@@ -16,14 +61,14 @@
                 json.marker.panTo();
                 json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218368/logo-marker-blue_qb7wwk.png';
               });
-    
+
               $(".result-card-" + json.id).on('mouseleave', function(e) {
                 handler.getMap().setZoom(14);
                 json.marker.setMap(handler.getMap());
                 json.marker.panTo();
                 json.marker.serviceObject.icon = 'http://res.cloudinary.com/dvhelys1s/image/upload/c_scale,w_22/v1493218588/logo-marker_vzp2pa.png';
               });
-    
+
               });
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
