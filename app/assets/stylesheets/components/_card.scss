@@ -110,6 +110,27 @@
   width: calc(30%);
 }
 
+.card-corner-triangle {
+    width:75px;
+    height:75px;
+    background-color: $soplex-blue;
+    overflow:hidden;
+}
+
+.card-corner-triangle:after {
+    content:"";
+    display:block;
+    width:70%;
+    height:70%;
+    background-color: white;
+    transform: rotate(-45deg);
+    transform-origin:0 0;
+    -ms-transform: rotate(-45deg);
+    -ms-transform-origin:0 0;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transform-origin:0 0;
+}
+
 .description-result-card{
   height: auto;
   padding: 10px;
