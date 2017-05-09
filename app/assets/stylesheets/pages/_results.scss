@@ -47,6 +47,8 @@
   overflow-y: scroll;
 }
 
+
+
 .map-box{
   position: fixed;
   top: 70px;
@@ -55,13 +57,24 @@
   left: 60%;
 }
 
-.resulsts-overview{
+@media (max-width: 1200px){
+  .map-box{
+  top: 150px;
+  }
+}
+
+.results-overview{
   margin-bottom: 150px;
   margin-left: 25px;
 }
 
 #map {
   height: 100%;
+}
+
+.results-filters{
+  padding-left: 25px;
+  width: 1000px;
 }
 
 
@@ -77,6 +90,7 @@
     margin-right: 3px;
     -webkit-appearance: none;
     color: black;
+    margin-bottom: 0;
   }
   #search_query_date input {
     color: black;

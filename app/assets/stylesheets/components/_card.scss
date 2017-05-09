@@ -90,6 +90,10 @@
   border: 1px solid black;
 }
 
+.result-card {
+  margin: 10px;
+}
+
 .photo-result-card {
   position: relative;
   height: 350px;
@@ -103,8 +107,7 @@
 
 .container-three-cards {
   display: flex;
-  // flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 // .container-three-cards:after {
@@ -153,19 +156,19 @@ position: absolute;
   justify-content: space-between;
 }
 
-.card-corner-triangle:after {
-    content:"";
-    display:block;
-    width:70%;
-    height:70%;
-    background-color: white;
-    transform: rotate(-45deg);
-    transform-origin:0 0;
-    -ms-transform: rotate(-45deg);
-    -ms-transform-origin:0 0;
-    -webkit-transform: rotate(-45deg);
-    -webkit-transform-origin:0 0;
-}
+// .card-corner-triangle:after {
+//     content:"";
+//     display:block;
+//     width:70%;
+//     height:70%;
+//     background-color: white;
+//     transform: rotate(-45deg);
+//     transform-origin:0 0;
+//     -ms-transform: rotate(-45deg);
+//     -ms-transform-origin:0 0;
+//     -webkit-transform: rotate(-45deg);
+//     -webkit-transform-origin:0 0;
+// }
 
 .description-result-card{
   height: auto;
@@ -184,12 +187,6 @@ position: absolute;
   }
 }
 
-.result-card{
-  height: 30em;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-  width: calc(30%);
-}
 
 .training-details {
   margin-bottom: 1em;

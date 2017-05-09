@@ -1,14 +1,22 @@
-<div class="container-fluid resulsts-overview">
+
+<div class="cont">
   <div class="row">
-    <div class="col-xs-7">
-      <%= render 'search_query_filters' %>
+  <div class="col-xs-12 col-md-7 ">
+     <%= render 'search_query_filters' %>
+   </div>
+ </div>
+</div>
+<div class="container-fluid results-overview">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-7">
+
       <% if @sessions.empty? %>
-        <%= render 'result_empty_card' %>
+      <%= render 'result_empty_card' %>
       <% else %>
-        <%= render 'result_cards' %>
+      <%= render 'result_cards' %>
       <% end %>
     </div>
-    <div class="col-xs-5">
+    <div class="hidden-xs col-sm-4 col-md-5">
       <%= render 'map' %>
     </div>
   </div>
@@ -16,8 +24,7 @@
 
 
 <style>
-.footer {
-  display: none;
-}
+  .footer {
+    display: none;
+  }
 </style>
-
