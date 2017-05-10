@@ -54,10 +54,11 @@
   top: 70px;
   bottom: 0;
   right: 0;
-  left: 60%;
+  left: 51%;
+  z-index: -10;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1370px){
   .map-box{
   top: 150px;
   }
@@ -79,6 +80,7 @@
 
 
 .search-training-session {
+  padding-left: 33px;
   padding-bottom: 1.5em;
   #search_query_sport, #search_query_date, .input-group-btn button  {
     height: 42px;

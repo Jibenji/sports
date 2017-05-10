@@ -92,6 +92,8 @@
 
 .result-card {
   margin: 10px;
+  width: 200px;
+  height: 400px;
 }
 
 .photo-result-card {
@@ -105,10 +107,39 @@
   border-radius: 2px;
 }
 
+@media (max-width: 1370px){
+  .result-card{
+    width: 180px;
+    height: 360px;
+    margin: 8px;
+  }
+  .photo-result-card{
+    width: 180px;
+    height: 315px;
+  }
+}
+
 .container-three-cards {
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
 }
+
+@media (max-width: 768px) {
+  .container-three-cards {
+    margin-left: -20px;
+  }
+.result-card{
+    width: 146px;
+    height: 294px;
+    margin: 4px;
+  }
+  .photo-result-card{
+    width: 146px;
+    height: 256px;
+  }
+}
+
 
 // .container-three-cards:after {
 //   content: "";
