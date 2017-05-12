@@ -105,8 +105,17 @@
   }
 }
 
+@media (max-width: 768px){
+  .search-training-session{
+    width: 600px;
+    display: flex;
+    #search_query_participants{
+      width:120px;
+    }
+  }
+}
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .search-training-session {
     margin-right: auto;
     margin-left: auto;
