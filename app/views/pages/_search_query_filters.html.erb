@@ -1,5 +1,5 @@
-<div class="search-training-session results-filters">
-  <%= simple_form_for :search_query, html: { class: "form-inline" }, url: results_path, method: :get do |f| %>
+<div>
+  <%= simple_form_for :search_query, html: { class: "form-inline search-training-session" }, url: results_path, method: :get do |f| %>
   <%= f.input :sport, autofocus: true, collection: @sports_selection, selected: params[:search_query][:sport], label: false, class: "black-button", style: "border-radius: 0% !important;" %>
   <%= f.input :date, as: :date_picker, class: "datepicker", input_html: { value: params[:search_query][:date] }, label: false %>
   <%= f.input :participants, collection: ["Participants ▾","1", "2", "3", "4", "5"], default: "Participants ▾", selected: params[:search_query][:participants], label: false %>

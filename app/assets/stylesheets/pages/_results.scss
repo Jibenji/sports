@@ -54,12 +54,13 @@
   top: 70px;
   bottom: 0;
   right: 0;
-  left: 60%;
+  left: 51%;
+  z-index: -10;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1370px){
   .map-box{
-  top: 150px;
+    top: 143px;
   }
 }
 
@@ -72,13 +73,12 @@
   height: 100%;
 }
 
-.results-filters{
-  padding-left: 25px;
-  width: 1000px;
-}
+
 
 
 .search-training-session {
+  width: 700px;
+  padding-left: 33px;
   padding-bottom: 1.5em;
   #search_query_sport, #search_query_date, .input-group-btn button  {
     height: 42px;
@@ -91,6 +91,7 @@
     -webkit-appearance: none;
     color: black;
     margin-bottom: 0;
+    width: 120px;
   }
   #search_query_date input {
     color: black;
@@ -104,12 +105,76 @@
   }
 }
 
-.result-cards-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+
+@media (max-width: 768px) {
+  .search-training-session {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    #search_query_sport{
+      width: 245px;
+      margin-bottom: 10px;
+    }
+    #search_query_date{
+      width: 200px;
+      margin-right: 5px;
+    }
+    .input-group-btn{
+      width: 40px;
+    }
+    #search_query_participants {
+      width: 245px;
+      margin: 10px 0;
+      margin-left: 0;
+    }
+    #filter-button{
+      width: 245px;
+      margin-left: 0;
+    }
+  }
 }
+@media (max-width: 700px){
+  .search-training-session{
+    margin-top: 65px;
+  }
+}
+// @media (max-width: 768px) {
+//   .search-training-session {
+//     width: auto;
+//     display: flex;
+//     // flex-direction: row;
+//     #search_query_sport{
+//       width: 140px;
+//       margin-bottom: 10px;
+//     }
+//     #search_query_date{
+//       width: 100px;
+
+//     }
+//     .input-group-btn{
+//       width: 40px;
+//     }
+//     #search_query_participants {
+//       width: 140px;
+
+//     }
+//     #filter-button{
+//       width: 140px;
+//     }
+    // margin-bottom: 30px;
+    // width: 320px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+//   }
+// }
 
 h5 {
   font-size: 14px;

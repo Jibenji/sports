@@ -25,7 +25,7 @@ class Profile < ApplicationRecord
       (total = numerator / denominator)
       total
     else
-      "no reviews yet"
+      "No reviews"
     end
   end
 end

@@ -92,6 +92,9 @@
 
 .result-card {
   margin: 10px;
+  margin-bottom: 30px;
+  width: 200px;
+  height: 400px;
 }
 
 .photo-result-card {
@@ -105,10 +108,41 @@
   border-radius: 2px;
 }
 
+@media (max-width: 1370px){
+  // .result-card{
+  //   width: 180px;
+  //   height: 360px;
+  //   margin: 8px;
+  // }
+  // .photo-result-card{
+  //   width: 180px;
+  //   height: 315px;
+  // }
+}
+
 .container-three-cards {
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
 }
+
+@media (max-width: 768px) {
+  .container-three-cards {
+    justify-content: space-around;
+    margin-left: -20px;
+  }
+.result-card{
+    width: 180px;
+    height: 360px;
+    margin: 4px;
+    margin-bottom: 30px;
+  }
+  .photo-result-card{
+    width: 180px;
+    height: 315px;
+  }
+}
+
 
 // .container-three-cards:after {
 //   content: "";
@@ -172,8 +206,9 @@ position: absolute;
 
 .description-result-card{
   height: auto;
-  padding: 10px;
-  font-size: 14px;
+  padding-top: 10px;
+  padding-left: 8px;
+  font-size: 13px;
   justify-content: center;
   p {
    color: black;
@@ -181,12 +216,12 @@ position: absolute;
   :hover{
    text-decoration: none;
   }
-  h3 {
-  color: black;
-  font-size: 19px;
-  }
 }
 
+#time-result-card{
+  font-weight: 600;
+  margin-bottom: 4px;
+}
 
 .training-details {
   margin-bottom: 1em;
